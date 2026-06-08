@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonadive – Deep Data. Real Impact.</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <div class="logo">
+      <div class="logo-icon">S</div>
+      <div class="logo-text">
+        <span class="logo-name">SONADIVE</span>
+        <span class="logo-tagline">Deep Data. Real Impact.</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn-primary">Book a Consultation</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-left">
+      <p class="eyebrow">DATA ANALYTICS CONSULTING</p>
+      <h1>Dive Deeper.<br>Discover <span class="gold">Value.</span><br>Deliver <span class="gold">Results.</span></h1>
+      <p class="hero-sub">We turn complex data into actionable insights that drive growth, efficiency, and competitive advantage.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Book a Consultation &rarr;</a>
+        <a href="#services" class="btn-outline">View Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-cards">
+        <div class="stat-card">
+          <p class="stat-label">Total Revenue</p>
+          <p class="stat-value">$12.45M</p>
+          <p class="stat-change positive">+15.8% vs last month</p>
+          <canvas id="sparkline1" width="80" height="22"></canvas>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Profit Margin</p>
+          <p class="stat-value">23.4%</p>
+          <p class="stat-change positive">+4.3% vs last month</p>
+          <canvas id="sparkline2" width="80" height="22"></canvas>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Data Accuracy</p>
+          <p class="stat-value">98.6%</p>
+          <p class="stat-change positive">+2.1% vs last month</p>
+          <canvas id="sparkline3" width="80" height="22"></canvas>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box">
+          <p class="chart-title">Revenue Trend</p>
+          <canvas id="revenueChart" height="140"></canvas>
+        </div>
+        <div class="chart-box donut-box">
+          <p class="chart-title">Revenue by Segment</p>
+          <div class="donut-wrap">
+            <canvas id="donutChart" width="130" height="130"></canvas>
+            <ul class="donut-legend">
+              <li><span class="dot blue"></span>Retail <strong>40%</strong></li>
+              <li><span class="dot gold-dot"></span>Finance <strong>30%</strong></li>
+              <li><span class="dot teal"></span>Healthcare <strong>20%</strong></li>
+              <li><span class="dot gray-dot"></span>Technology <strong>10%</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTED BY ===== -->
+<section class="trusted">
+  <div class="container">
+    <p class="trusted-label">TRUSTED BY LEADING ORGANIZATIONS</p>
+    <div class="logos">
+      <span class="logo-badge">&#9651; airtel</span>
+      <span class="logo-badge">&#11036; TATA</span>
+      <span class="logo-badge">&#9671; DP WORLD</span>
+      <span class="logo-badge">&#9632; HDFC BANK</span>
+      <span class="logo-badge">&#10022; Dabur</span>
+      <span class="logo-badge">&#9670; Mahindra</span>
+      <span class="logo-badge">&#9650; ICICI Bank</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="section-eyebrow">OUR SERVICES</p>
+    <h2>End-to-End Data Solutions</h2>
+    <p class="section-sub">From data strategy to actionable insights, we help you make confident, data-driven decisions.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#128200;</div>
+        <h3>Data Analytics</h3>
+        <p>Uncover patterns, trends, and opportunities with advanced analytics.</p>
+        <a href="#" class="arrow-link">&rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128202;</div>
+        <h3>Business Intelligence</h3>
+        <p>Transform data into interactive dashboards and reports for smarter decisions.</p>
+        <a href="#" class="arrow-link">&rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128181;</div>
+        <h3>Financial Analytics</h3>
+        <p>Drive profitability with financial modeling, forecasting, and performance analysis.</p>
+        <a href="#" class="arrow-link">&rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128203;</div>
+        <h3>Data Strategy</h3>
+        <p>Build a roadmap for data adoption, governance, and long-term value.</p>
+        <a href="#" class="arrow-link">&rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128187;</div>
+        <h3>Dashboard Development</h3>
+        <p>Custom dashboards that provide real-time insights at a glance.</p>
+        <a href="#" class="arrow-link">&rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#129302;</div>
+        <h3>AI &amp; Automation</h3>
+        <p>Leverage AI and automation to optimize processes and predict outcomes.</p>
+        <a href="#" class="arrow-link">&rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDIES ===== -->
+<section class="case-studies" id="case-studies">
+  <div class="container">
+    <div class="cs-header">
+      <div>
+        <p class="section-eyebrow gold-text">CASE STUDIES</p>
+        <h2 class="white">Real Challenges. Real Results.</h2>
+      </div>
+      <a href="#" class="btn-outline-white">View All Case Studies</a>
+    </div>
+    <div class="cs-grid">
+      <div class="cs-card">
+        <span class="cs-tag retail">Retail</span>
+        <h3>Driving Sales Growth with Customer Insights</h3>
+        <p>We helped a retail client increase sales by 18% using advanced customer segmentation and analytics.</p>
+        <p class="cs-stat"><strong>18%</strong> <span>Increase in Sales</span></p>
+        <div class="cs-chart-area">
+          <canvas id="csChart1" height="60"></canvas>
+        </div>
+      </div>
+      <div class="cs-card">
+        <span class="cs-tag finance">Finance</span>
+        <h3>Improving Credit Risk Assessment</h3>
+        <p>Built a predictive model that reduced default rates by 27% and improved risk accuracy.</p>
+        <p class="cs-stat gold"><strong>27%</strong> <span>Reduction in Default Rate</span></p>
+        <div class="cs-donut-area">
+          <canvas id="csDonut" width="90" height="90"></canvas>
+        </div>
+      </div>
+      <div class="cs-card">
+        <span class="cs-tag manufacturing">Manufacturing</span>
+        <h3>Optimizing Operations with Data</h3>
+        <p>Implemented real-time dashboards that improved operational efficiency by 22%.</p>
+        <p class="cs-stat gold"><strong>22%</strong> <span>Improvement in Efficiency</span></p>
+        <div class="cs-chart-area">
+          <canvas id="csChart2" height="60"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY + CONTACT ===== -->
+<section class="why-contact" id="contact">
+  <div class="container why-contact-inner">
+    <!-- Why Choose -->
+    <div class="why">
+      <p class="section-eyebrow">WHY CHOOSE SONADIVE</p>
+      <h2>Your Success is<br>Data-Driven</h2>
+      <div class="why-divider"></div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">&#128200;</div>
+          <div>
+            <h4>Data-Driven Decisions</h4>
+            <p>We help you make decisions backed by accurate data.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">&#127758;</div>
+          <div>
+            <h4>Industry Expertise</h4>
+            <p>Deep domain knowledge across multiple industries.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">&#128161;</div>
+          <div>
+            <h4>Actionable Insights</h4>
+            <p>Insights that drive action and measurable impact.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">&#127942;</div>
+          <div>
+            <h4>Measurable Results</h4>
+            <p>We focus on outcomes that matter to your business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrap">
+      <p class="section-eyebrow">LET'S CONNECT</p>
+      <h2>Get in Touch</h2>
+      <p class="section-sub">Have a question or project in mind? Fill out the form and our team will get back to you.</p>
+      <form class="contact-form" onsubmit="return false">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Company Name" />
+          <input type="tel" placeholder="Phone Number" />
+        </div>
+        <textarea placeholder="Your Message" rows="4"></textarea>
+        <button type="submit" class="btn-primary form-btn">Send Message &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">S</div>
+        <div class="logo-text">
+          <span class="logo-name">SONADIVE</span>
+          <span class="logo-tagline">Deep Data. Real Impact.</span>
+        </div>
+      </div>
+      <p class="footer-desc">Sonadive is a data analytics consulting company helping businesses unlock the power of data to drive growth and achieve real impact.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">t</a>
+        <a href="#" class="social-btn">&#9654;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="#">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Industries</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Insights</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#">Data Analytics</a>
+      <a href="#">Business Intelligence</a>
+      <a href="#">Financial Analytics</a>
+      <a href="#">Data Strategy</a>
+      <a href="#">Dashboard Development</a>
+      <a href="#">AI &amp; Automation</a>
+    </div>
+    <div class="footer-col">
+      <h5>Industries</h5>
+      <a href="#">Retail</a>
+      <a href="#">Financial Services</a>
+      <a href="#">Healthcare</a>
+      <a href="#">Manufacturing</a>
+      <a href="#">Technology</a>
+      <a href="#">Logistics</a>
+    </div>
+    <div class="footer-col">
+      <h5>Newsletter</h5>
+      <p>Stay updated with insights and latest trends in data analytics.</p>
+      <div class="newsletter-row">
+        <input type="email" placeholder="Enter your email" />
+        <button class="btn-gold-sm">&rarr;</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; 2024 Sonadive Analytics Pvt. Ltd. All Rights Reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="charts.js"></script>
+</body>
+</html>
