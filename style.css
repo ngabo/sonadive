@@ -81,8 +81,8 @@ body {
 /* ===== HERO ===== */
 .hero {
   background: #070d1a;
-  min-height: 88vh;
-  padding: 110px 0 90px;
+  min-height: auto;
+  padding: 70px 0 60px;
   position: relative;
   overflow: hidden;
   display: flex; align-items: center;
@@ -149,7 +149,7 @@ body {
   padding: 6px 16px 6px 10px;
   font-size: 11px; font-weight: 700; color: #e8a020;
   letter-spacing: 2px; text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 .hero-badge-dot {
   width: 6px; height: 6px; border-radius: 50%;
@@ -163,9 +163,9 @@ body {
 }
 
 .hero h1 {
-  color: #fff; font-size: 72px; line-height: 1.08;
-  font-weight: 900; margin-bottom: 24px;
-  letter-spacing: -1.5px;
+  color: #fff; font-size: 54px; line-height: 1.1;
+  font-weight: 900; margin-bottom: 18px;
+  letter-spacing: -1px;
 }
 .gradient-text {
   background: linear-gradient(135deg, #e8a020 0%, #f5c842 50%, #ffda6a 100%);
@@ -173,12 +173,12 @@ body {
   background-clip: text;
 }
 .hero-sub {
-  color: #6a7a9a; font-size: 18px; line-height: 1.75;
-  margin-bottom: 44px; max-width: 540px; font-weight: 400;
+  color: #6a7a9a; font-size: 16px; line-height: 1.7;
+  margin-bottom: 32px; max-width: 520px; font-weight: 400;
 }
 .hero-cta {
   display: flex; gap: 14px; align-items: center; justify-content: center;
-  margin-bottom: 60px; flex-wrap: wrap;
+  margin-bottom: 36px; flex-wrap: wrap;
 }
 
 /* Trust strip */
@@ -203,14 +203,14 @@ body {
 }
 
 /* ===== SERVICES ===== */
-.services { padding: 100px 0; background: #f7f8fc; }
+.services { padding: 60px 0; background: #f7f8fc; }
 .services h2 {
-  text-align: center; font-size: 40px; font-weight: 800;
-  color: #0a1225; margin-bottom: 12px; letter-spacing: -0.5px;
+  text-align: center; font-size: 32px; font-weight: 800;
+  color: #0a1225; margin-bottom: 10px; letter-spacing: -0.5px;
 }
 .section-sub {
-  text-align: center; color: #6b7a99; font-size: 16px;
-  margin-bottom: 56px; line-height: 1.7; max-width: 520px;
+  text-align: center; color: #6b7a99; font-size: 14px;
+  margin-bottom: 36px; line-height: 1.65; max-width: 480px;
   margin-left: auto; margin-right: auto;
 }
 
@@ -273,12 +273,12 @@ body {
 .svc-link:hover span { transform: translateX(3px); }
 
 /* ===== CASE STUDIES ===== */
-.case-studies { background: #070d1a; padding: 100px 0; }
+.case-studies { background: #070d1a; padding: 60px 0; }
 .cs-header {
   display: flex; align-items: flex-end; justify-content: space-between;
-  margin-bottom: 44px;
+  margin-bottom: 28px;
 }
-.cs-header h2 { font-size: 40px; font-weight: 800; letter-spacing: -0.5px; }
+.cs-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; }
 .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
 .cs-card {
@@ -393,16 +393,16 @@ body {
 @keyframes dotIn { to { opacity: 1; transform: scale(1); } }
 
 /* ===== WHY + CONTACT ===== */
-.why-contact { padding: 100px 0; background: #fff; }
-.why-contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.why-contact { padding: 60px 0; background: #fff; }
+.why-contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 
 .why .section-eyebrow { text-align: left; }
 .why h2 {
-  font-size: 38px; font-weight: 800; color: #0a1225;
-  margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px;
+  font-size: 30px; font-weight: 800; color: #0a1225;
+  margin-bottom: 14px; line-height: 1.2; letter-spacing: -0.5px;
 }
-.why-divider { width: 48px; height: 3px; background: linear-gradient(90deg,#e8a020,#f5c842); border-radius: 2px; margin-bottom: 36px; }
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.why-divider { width: 48px; height: 3px; background: linear-gradient(90deg,#e8a020,#f5c842); border-radius: 2px; margin-bottom: 24px; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .why-item {
   display: flex; gap: 14px; align-items: flex-start;
   padding: 20px 18px; border-radius: 12px;
@@ -422,10 +422,10 @@ body {
 /* Contact form */
 .contact-form-wrap .section-eyebrow { text-align: left; }
 .contact-form-wrap h2 {
-  font-size: 38px; font-weight: 800; color: #0a1225;
-  margin-bottom: 10px; letter-spacing: -0.5px;
+  font-size: 30px; font-weight: 800; color: #0a1225;
+  margin-bottom: 8px; letter-spacing: -0.5px;
 }
-.contact-form-wrap .section-sub { text-align: left; margin-bottom: 32px; font-size: 15px; max-width: none; }
+.contact-form-wrap .section-sub { text-align: left; margin-bottom: 20px; font-size: 13.5px; max-width: none; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
 .contact-form input,
 .contact-form textarea {
@@ -443,10 +443,10 @@ body {
 .form-btn { width: auto; }
 
 /* ===== FOOTER ===== */
-.footer { background: #070d1a; padding: 72px 0 0; }
+.footer { background: #070d1a; padding: 48px 0 0; }
 .footer-inner {
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-  gap: 40px; padding-bottom: 48px;
+  gap: 32px; padding-bottom: 32px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .footer-brand .logo { margin-bottom: 18px; }
