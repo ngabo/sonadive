@@ -13,7 +13,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.sonadive.com/" />
 
-  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.sonadive.com/" />
   <meta property="og:title" content="Sonadive | Data Analytics Consulting" />
@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="We turn complex data into actionable insights that drive growth, efficiency, and competitive advantage." />
   <meta name="twitter:image" content="https://www.sonadive.com/og-image.png" />
 
-  <!-- Schema.org Structured Data -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,21 +43,37 @@
   }
   </script>
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#070d1a" />
+  <meta name="msapplication-TileColor" content="#070d1a" />
+
   <link rel="stylesheet" href="style-v2.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
+<!-- Custom Cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
 <!-- ===== NAVBAR ===== -->
 <header class="navbar">
   <div class="container nav-inner">
-    <div class="logo">
+    <a href="index.html" class="logo">
       <div class="logo-icon">S</div>
       <div class="logo-text">
         <span class="logo-name">SONADIVE</span>
         <span class="logo-tagline">Deep Data. Real Impact.</span>
       </div>
-    </div>
+    </a>
     <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About Us</a>
@@ -67,15 +83,73 @@
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a href="contact.html" class="btn-primary">Book a Consultation</a>
+    <a href="contact.html" class="btn-primary nav-cta">Book a Consultation</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site navigation">
+  <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <div class="mobile-menu-logo logo">
+    <div class="logo-icon">S</div>
+    <div class="logo-text">
+      <span class="logo-name">SONADIVE</span>
+      <span class="logo-tagline">Deep Data. Real Impact.</span>
+    </div>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="industries.html">Industries</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="insights.html">Insights</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a href="contact.html" class="btn-primary mobile-cta">Book a Consultation &rarr;</a>
+</div>
+<div class="mobile-menu-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <canvas id="heroCanvas" class="hero-canvas"></canvas>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
+
+  <!-- Floating geometric shapes -->
+  <div class="geo-shape geo-1" aria-hidden="true"></div>
+  <div class="geo-shape geo-2" aria-hidden="true"></div>
+  <div class="geo-shape geo-3" aria-hidden="true"></div>
+
+  <!-- Floating data widgets (desktop only) -->
+  <div class="hero-float hero-float-l" aria-hidden="true">
+    <div class="hf-label">Avg. ROI Delivered</div>
+    <div class="hf-val">+247%</div>
+    <div class="hf-bars">
+      <div class="hf-bar" style="--bh:38%"></div>
+      <div class="hf-bar" style="--bh:62%"></div>
+      <div class="hf-bar" style="--bh:50%"></div>
+      <div class="hf-bar" style="--bh:82%"></div>
+      <div class="hf-bar hf-bar-gold" style="--bh:100%"></div>
+    </div>
+  </div>
+  <div class="hero-float hero-float-r" aria-hidden="true">
+    <div class="hf-dot"></div>
+    <div class="hf-label">Client Satisfaction</div>
+    <div class="hf-val">98%</div>
+    <div class="hf-ring-wrap">
+      <svg viewBox="0 0 56 56" width="54" height="54">
+        <circle cx="28" cy="28" r="22" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+        <circle cx="28" cy="28" r="22" fill="none" stroke="#e8a020" stroke-width="5"
+          stroke-dasharray="138" stroke-dashoffset="4" stroke-linecap="round"
+          transform="rotate(-90 28 28)"/>
+      </svg>
+    </div>
+  </div>
+
   <div class="container hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
@@ -88,8 +162,39 @@
       <a href="services.html" class="btn-outline">View Our Services</a>
     </div>
   </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
 </section>
 
+<!-- ===== STATS STRIP ===== -->
+<section class="stats-strip" aria-label="Key performance metrics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-count="50" data-suffix="+">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Enterprise Clients</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item" data-count="247" data-suffix="%">
+        <span class="stat-num">247%</span>
+        <span class="stat-label">Average ROI Improvement</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item" data-count="98" data-suffix="%">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item" data-count="15" data-suffix="+">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Industries Served</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== SERVICES ===== -->
 <section class="services" id="services">
@@ -105,8 +210,8 @@
         <div class="svc-body">
           <h3>Data Analytics</h3>
           <p>Transform raw data into actionable insights.</p>
+          <a href="services.html" class="svc-link">Learn more <span>&rarr;</span></a>
         </div>
-        <a href="#" class="svc-link">Learn more <span>&rarr;</span></a>
       </div>
       <div class="service-card" style="--i:1">
         <div class="service-icon">
@@ -115,8 +220,8 @@
         <div class="svc-body">
           <h3>Business Intelligence</h3>
           <p>Interactive dashboards and KPI reporting.</p>
+          <a href="services.html" class="svc-link">Learn more <span>&rarr;</span></a>
         </div>
-        <a href="#" class="svc-link">Learn more <span>&rarr;</span></a>
       </div>
       <div class="service-card" style="--i:2">
         <div class="service-icon">
@@ -125,8 +230,8 @@
         <div class="svc-body">
           <h3>Financial Planning &amp; Analytics</h3>
           <p>Forecasting, budgeting, and scenario planning.</p>
+          <a href="services.html" class="svc-link">Learn more <span>&rarr;</span></a>
         </div>
-        <a href="#" class="svc-link">Learn more <span>&rarr;</span></a>
       </div>
       <div class="service-card" style="--i:3">
         <div class="service-icon">
@@ -135,8 +240,8 @@
         <div class="svc-body">
           <h3>Data Engineering</h3>
           <p>ETL pipelines, data warehouses, and integrations.</p>
+          <a href="services.html" class="svc-link">Learn more <span>&rarr;</span></a>
         </div>
-        <a href="#" class="svc-link">Learn more <span>&rarr;</span></a>
       </div>
       <div class="service-card" style="--i:4">
         <div class="service-icon">
@@ -145,8 +250,8 @@
         <div class="svc-body">
           <h3>AI &amp; Automation</h3>
           <p>AI-powered solutions and workflow automation.</p>
+          <a href="services.html" class="svc-link">Learn more <span>&rarr;</span></a>
         </div>
-        <a href="#" class="svc-link">Learn more <span>&rarr;</span></a>
       </div>
       <div class="service-card" style="--i:5">
         <div class="service-icon">
@@ -155,8 +260,8 @@
         <div class="svc-body">
           <h3>Data Strategy &amp; Governance</h3>
           <p>Build a scalable and data-driven organization.</p>
+          <a href="services.html" class="svc-link">Learn more <span>&rarr;</span></a>
         </div>
-        <a href="#" class="svc-link">Learn more <span>&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -347,22 +452,22 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo" style="margin-bottom:14px">
+        <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex">
           <div class="logo-icon">S</div>
           <div class="logo-text">
             <span class="logo-name">SONADIVE</span>
             <span class="logo-tagline">Deep Data. Real Impact.</span>
           </div>
-        </div>
+        </a>
         <p class="footer-desc">Data analytics consulting that transforms complexity into clarity — helping businesses grow through the power of data.</p>
         <div class="social-links">
-          <a href="#" class="social-btn" title="LinkedIn">
+          <a href="#" class="social-btn" title="LinkedIn" aria-label="LinkedIn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="#" class="social-btn" title="Twitter">
+          <a href="#" class="social-btn" title="Twitter" aria-label="Twitter">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
           </a>
-          <a href="mailto:ngabochampion@gmail.com" class="social-btn" title="Email">
+          <a href="mailto:ngabochampion@gmail.com" class="social-btn" title="Email" aria-label="Email us">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </div>
@@ -399,8 +504,8 @@
             ngabochampion@gmail.com
           </p>
           <div class="newsletter-row" style="margin-top:12px">
-            <input type="email" placeholder="Your email" />
-            <button class="btn-gold-sm">&rarr;</button>
+            <input type="email" placeholder="Your email" aria-label="Newsletter email" />
+            <button class="btn-gold-sm" aria-label="Subscribe">&rarr;</button>
           </div>
           <p class="footer-newsletter-hint">Get data insights in your inbox.</p>
         </div>
@@ -418,6 +523,10 @@
   </div>
 </footer>
 
+<!-- Scripts -->
 <script src="charts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="animations.js"></script>
 </body>
 </html>

@@ -6,10 +6,21 @@
   <title>Services | Sonadive – End-to-End Data Solutions</title>
   <meta name="description" content="Explore Sonadive's full suite of data analytics services: Data Analytics, Business Intelligence, Financial Planning, Data Engineering, AI & Automation, and Data Strategy." />
   <link rel="canonical" href="https://www.sonadive.com/services.html" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#070d1a" />
   <link rel="stylesheet" href="style-v2.css" />
   <link rel="stylesheet" href="pages.css" />
 </head>
 <body>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <header class="navbar">
   <div class="container nav-inner">
@@ -29,9 +40,34 @@
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a href="contact.html" class="btn-primary">Book a Consultation</a>
+    <a href="contact.html" class="btn-primary nav-cta">Book a Consultation</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site navigation">
+  <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <div class="mobile-menu-logo logo">
+    <div class="logo-icon">S</div>
+    <div class="logo-text">
+      <span class="logo-name">SONADIVE</span>
+      <span class="logo-tagline">Deep Data. Real Impact.</span>
+    </div>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="industries.html">Industries</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="insights.html">Insights</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a href="contact.html" class="btn-primary mobile-cta">Book a Consultation &rarr;</a>
+</div>
+<div class="mobile-menu-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
 
 <!-- Page Hero -->
 <section class="page-hero">
@@ -231,5 +267,8 @@
   <div class="footer-bottom"><div class="container footer-bottom-inner"><p>&copy; 2025 Sonadive Analytics. All Rights Reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div></div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="animations.js"></script>
 </body>
 </html>
