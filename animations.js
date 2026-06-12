@@ -67,15 +67,18 @@
     const tl = gsap.timeline({
       paused: true,
       defaults: { ease: 'power3.out' },
-      onReverseComplete: () => { mobileMenu.classList.remove('is-ready'); }
+      onReverseComplete: () => {
+        mobileMenu.classList.remove('is-ready');
+        if (backdrop) backdrop.classList.remove('is-active');
+      }
     });
     tl.to(mobileMenu, { x: 0, duration: 0.45 })
-      .to(backdrop, { opacity: 1, pointerEvents: 'auto', duration: 0.3 }, 0)
       .from('.mobile-menu-links a', { x: 30, opacity: 0, stagger: 0.06, duration: 0.35 }, '-=0.15')
       .from('.mobile-cta', { y: 16, opacity: 0, duration: 0.3 }, '-=0.1');
 
     function openMenu() {
       mobileMenu.classList.add('is-ready');
+      if (backdrop) backdrop.classList.add('is-active');
       gsap.set(mobileMenu, { x: '100%' });
       tl.play(0);
       document.body.style.overflow = 'hidden';

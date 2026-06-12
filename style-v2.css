@@ -125,11 +125,14 @@ body {
   display: flex; /* Set by JS after GSAP initialises */
 }
 .mobile-menu-backdrop {
+  display: none;
   position: fixed; inset: 0; z-index: 199;
   background: rgba(0,0,0,0.7);
   backdrop-filter: blur(4px);
-  opacity: 0; pointer-events: none;
   transition: opacity 0.3s;
+}
+.mobile-menu-backdrop.is-active {
+  display: block;
 }
 .mobile-menu-close {
   align-self: flex-end; background: rgba(255,255,255,0.06);

@@ -1,5 +1,8 @@
 /* ===== INNER PAGES SHARED STYLES ===== */
 
+/* Prevent body white from showing between sticky navbar and dark page-hero */
+body { background: #070d1a; }
+
 /* Page Hero */
 .page-hero {
   background: #070d1a;
@@ -33,7 +36,7 @@
 }
 
 /* Page sections */
-.page-section { padding: 72px 0; }
+.page-section { padding: 72px 0; background: #fff; }
 .page-section.bg-light { background: #f8f9fc; }
 .page-section.bg-dark { background: #070d1a; }
 .section-header { margin-bottom: 44px; }
