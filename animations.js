@@ -124,28 +124,6 @@
     });
   });
 
-  // ── Scroll-Triggered Stats Counters ───────────────────────────
-  document.querySelectorAll('.stat-item[data-count]').forEach(item => {
-    const numEl  = item.querySelector('.stat-num');
-    const target = parseFloat(item.dataset.count);
-    const suffix = item.dataset.suffix || '';
-
-    ScrollTrigger.create({
-      trigger: item,
-      start: 'top 88%',
-      once: true,
-      onEnter: () => {
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: target,
-          duration: 2.2,
-          ease: 'power2.out',
-          onUpdate() { numEl.textContent = Math.round(obj.val) + suffix; }
-        });
-      }
-    });
-  });
-
   // ── Services Grid ─────────────────────────────────────────────
   const svcCards = gsap.utils.toArray('.service-card');
   if (svcCards.length) {
