@@ -64,8 +64,8 @@
 
     home: {
       '.hero-badge':   ['Data Analytics Consulting', 'Conseil en Analytique de Données'],
-      '.hero h1':      {h:['Dive Deeper.<br>Discover <span class="gradient-text">Value.</span><br>Deliver <span class="gradient-text">Results.</span>',
-                          'Plongez plus loin.<br>Découvrez la <span class="gradient-text">Valeur.</span><br>Livrez des <span class="gradient-text">Résultats.</span>']},
+      '.hero h1':      {h:['Dive Deeper.<br>Discover <span class="gradient-text">Value.</span>',
+                          'Analysez en profondeur.<br>Extrayez de la <span class="gradient-text">Valeur.</span>']},
       '.hero-sub':     ['We turn complex data into actionable insights that drive growth, efficiency, and competitive advantage.',
                         "Nous transformons vos données complexes en insights actionnables qui stimulent la croissance, l'efficacité et l'avantage concurrentiel."],
       '.hero-cta a.btn-primary':  ['Book a Consultation →', 'Réserver une consultation →'],
