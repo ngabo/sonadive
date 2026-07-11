@@ -70,8 +70,6 @@
                         "Nous transformons vos données complexes en insights actionnables qui stimulent la croissance, l'efficacité et l'avantage concurrentiel."],
       '.hero-cta a.btn-primary':  ['Book a Consultation →', 'Réserver une consultation →'],
       '.hero-cta a.btn-outline':  ['View Our Services', 'Voir nos services'],
-      '.hero-scroll-hint span':   ['Scroll', 'Défiler'],
-      '.hf-label:first-of-type':  ['Avg. ROI Delivered', 'ROI Moyen Livré'],
       '.hero-float-r .hf-label':  ['Client Satisfaction', 'Satisfaction Client'],
       '.services .section-eyebrow': ['OUR SERVICES', 'NOS SERVICES'],
       '.services h2':  ['End-to-End Data Solutions', 'Solutions Data Complètes'],

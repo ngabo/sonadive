@@ -103,8 +103,7 @@
       .from('.hero h1',     { y: 48, opacity: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
       .from('.hero-sub',    { y: 32, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
       .from('.hero-cta > *', { y: 20, opacity: 0, stagger: 0.12, duration: 0.5, ease: 'power3.out' }, '-=0.4')
-      .from('.hero-scroll-hint', { opacity: 0, duration: 0.6 }, '-=0.1')
-      .from('.hero-float', { y: 20, opacity: 0, stagger: 0.15, duration: 0.7, ease: 'power3.out' }, '-=0.5');
+      .from('.hero-float', { y: 20, opacity: 0, stagger: 0.15, duration: 0.7, ease: 'power3.out' }, '-=0.4');
   }
 
   // ── Hero Mouse Parallax ────────────────────────────────────────
