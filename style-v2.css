@@ -68,14 +68,10 @@ body {
 }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .logo-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: linear-gradient(135deg, #e8a020, #f5c842);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 900; font-size: 20px; color: #070d1a;
-  box-shadow: 0 4px 16px rgba(232,160,32,0.35);
-  transition: transform 0.3s, box-shadow 0.3s;
+  height: 40px; width: auto; display: block;
+  transition: transform 0.3s;
 }
-.logo:hover .logo-icon { transform: rotate(-5deg) scale(1.05); box-shadow: 0 6px 22px rgba(232,160,32,0.5); }
+.logo:hover .logo-icon { transform: rotate(-5deg) scale(1.05); }
 .logo-text { display: flex; flex-direction: column; }
 .logo-name { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 1.5px; }
 .logo-tagline { color: #5a6a88; font-size: 10px; letter-spacing: 0.5px; }
