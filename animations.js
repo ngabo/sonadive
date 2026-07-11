@@ -25,7 +25,7 @@
       requestAnimationFrame(tick);
     })();
 
-    const hoverEls = document.querySelectorAll('a, button, .service-card, .cs-card, .why-item, .value-card, .industry-card');
+    const hoverEls = document.querySelectorAll('a, button, .service-card, .cs-card, .tech-card, .why-item, .value-card, .industry-card');
     hoverEls.forEach(el => {
       el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2, opacity: 0.5, duration: 0.3 }));
       el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.3 }));
@@ -144,6 +144,18 @@
       start: 'top 86%',
       once: true,
       onEnter: () => gsap.to(svcCards, { y: 0, opacity: 1, stagger: 0.08, duration: 0.7, ease: 'power3.out' })
+    });
+  }
+
+  // ── Tech Stack Cards ───────────────────────────────────────────
+  const techCards = gsap.utils.toArray('.tech-card');
+  if (techCards.length) {
+    gsap.set(techCards, { y: 40, opacity: 0, scale: 0.94 });
+    ScrollTrigger.create({
+      trigger: '.tech-grid',
+      start: 'top 88%',
+      once: true,
+      onEnter: () => gsap.to(techCards, { y: 0, opacity: 1, scale: 1, stagger: 0.1, duration: 0.65, ease: 'back.out(1.6)' })
     });
   }
 
