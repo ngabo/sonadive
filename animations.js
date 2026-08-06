@@ -106,34 +106,6 @@
       .from('.hero-float', { y: 20, opacity: 0, stagger: 0.15, duration: 0.7, ease: 'power3.out' }, '-=0.4');
   }
 
-  // ── Hero Mouse Parallax ────────────────────────────────────────
-  const orb1 = document.querySelector('.hero-orb-1');
-  const orb2 = document.querySelector('.hero-orb-2');
-  const hero  = document.querySelector('.hero');
-
-  if (hero && orb1 && orb2) {
-    hero.addEventListener('mousemove', e => {
-      const { left, top, width, height } = hero.getBoundingClientRect();
-      const x = (e.clientX - left) / width  - 0.5;
-      const y = (e.clientY - top)  / height - 0.5;
-      gsap.to(orb1, { x: x * 70,  y: y * 50,  duration: 1.8, ease: 'power2.out', overwrite: true });
-      gsap.to(orb2, { x: x * -50, y: y * -40, duration: 1.8, ease: 'power2.out', overwrite: true });
-    }, { passive: true });
-  }
-
-  // ── Floating Geo Shapes ────────────────────────────────────────
-  document.querySelectorAll('.geo-shape').forEach((shape, i) => {
-    gsap.to(shape, {
-      y: (i % 2 === 0 ? -18 : 18),
-      rotation: (i % 2 === 0 ? 20 : -15),
-      duration: 3.5 + i * 0.8,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut',
-      delay: i * 0.4
-    });
-  });
-
   // ── Services Grid ─────────────────────────────────────────────
   const svcCards = gsap.utils.toArray('.service-card');
   if (svcCards.length) {
