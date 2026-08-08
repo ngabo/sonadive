@@ -1,0 +1,4 @@
+node_modules/
+.claude/
+server.ps1
+start-chargeos.cmd

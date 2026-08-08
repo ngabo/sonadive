@@ -22,18 +22,20 @@
   const MAP = {
 
     // ── Shared: Navbar ──────────────────────────────────────────
-    '.logo-tagline': ['Deep Data. Real Impact.', 'Données profondes. Impact réel.'],
-    '.nav-links a[href="/"]':              ['Home', 'Accueil'],
-    '.nav-links a[href="about.html"]':     ['About Us', 'À propos'],
-    '.nav-links a[href="services.html"]':  ['Services', 'Services'],
-    '.nav-links a[href="industries.html"]':['Industries', 'Secteurs'],
-    '.nav-links a[href="case-studies.html"]':['Case Studies', 'Études de cas'],
-    '.nav-links a[href="insights.html"]':  ['Insights', 'Perspectives'],
-    '.nav-links a[href="contact.html"]:not(.btn-primary)': ['Contact', 'Contact'],
-    '.btn-primary.nav-cta': ['Book a Consultation', 'Réserver une consultation'],
+    '.logo-tagline': {h:['Data. Insight. <span class="gold">Impact.</span>',
+                         'Données. Insight. <span class="gold">Impact.</span>']},
+    '.nav-links > a[href="/"]':            ['Home', 'Accueil'],
+    '.nav-links > a[href="about.html"]':   ['About Us', 'À propos'],
+    '.nav-drop-trigger':                   {h:['Solutions <svg class="nav-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                                                'Solutions <svg class="nav-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>']},
+    '.nav-links > a[href="industries.html"]':['Industries', 'Secteurs'],
+    '.nav-links > a[href="case-studies.html"]':['Case Studies', 'Études de cas'],
+    '.nav-links > a[href="insights.html"]':['Insights', 'Perspectives'],
+    '.nav-links > a[href="contact.html"]:not(.btn-primary)': ['Contact', 'Contact'],
+    '.btn-primary.nav-cta': ['Book a Consultation →', 'Réserver une consultation →'],
     '.mobile-menu-links a[href="/"]':              ['Home', 'Accueil'],
     '.mobile-menu-links a[href="about.html"]':     ['About Us', 'À propos'],
-    '.mobile-menu-links a[href="services.html"]':  ['Services', 'Services'],
+    '.mobile-menu-links a[href="services.html"]':  ['Solutions', 'Solutions'],
     '.mobile-menu-links a[href="industries.html"]':['Industries', 'Secteurs'],
     '.mobile-menu-links a[href="case-studies.html"]':['Case Studies', 'Études de cas'],
     '.mobile-menu-links a[href="insights.html"]':  ['Insights', 'Perspectives'],
@@ -63,14 +65,13 @@
   const PAGE_MAPS = {
 
     home: {
-      '.hero-badge':   ['Data Analytics Consulting', 'Conseil en Analytique de Données'],
-      '.hero h1':      {h:['Dive Deeper.<br>Discover <span class="gradient-text">Value.</span>',
-                          'Analysez en profondeur.<br>Extrayez de la <span class="gradient-text">Valeur.</span>']},
-      '.hero-sub':     ['We turn complex data into actionable insights that drive growth, efficiency, and competitive advantage.',
-                        "Nous transformons vos données complexes en insights actionnables qui stimulent la croissance, l'efficacité et l'avantage concurrentiel."],
+      '.hero-badge':   ['Trusted Business Analytics and AI Consulting', "Conseil de Confiance en Analytique d'Entreprise et IA"],
+      '.hero h1':      {h:['Transform Data Into<br><span class="gold-text">Competitive Advantage.</span>',
+                          'Transformez vos Données en<br><span class="gold-text">Avantage Concurrentiel.</span>']},
+      '.hero-sub':     ['We build enterprise planning, analytics and AI solutions that help finance, supply chain and executive teams make faster, smarter decisions.',
+                        "Nous concevons des solutions de planification, d'analytique et d'IA qui aident les équipes finance, supply chain et direction à décider plus vite et mieux."],
       '.hero-cta a.btn-primary':  ['Book a Consultation →', 'Réserver une consultation →'],
-      '.hero-cta a.btn-outline':  ['View Our Services', 'Voir nos services'],
-      '.hero-float-r .hf-label':  ['Client Satisfaction', 'Satisfaction Client'],
+      '.hero-cta a.btn-outline':  ['Explore Solutions →', 'Découvrir nos solutions →'],
       '.services .section-eyebrow': ['OUR SERVICES', 'NOS SERVICES'],
       '.services h2':  ['End-to-End Data Solutions', 'Solutions Data Complètes'],
       '.services .section-sub': ['From data strategy to actionable insights, we help you make confident, data-driven decisions.',
@@ -89,11 +90,6 @@
       '.service-card:nth-child(6) p':  ['Build a scalable and data-driven organization.', 'Construisez une organisation scalable orientée données.'],
       '.svc-link': ['Learn more →', 'En savoir plus →'],
       '.tech-stack .section-eyebrow': ['TECHNOLOGIES & PLATFORMS WE WORK WITH', 'TECHNOLOGIES ET PLATEFORMES UTILISÉES'],
-      '.tech-grid .tech-card:nth-child(1) .tech-desc': ['Connected planning', 'Planification connectée'],
-      '.tech-grid .tech-card:nth-child(2) .tech-desc': ['Business planning', 'Planification d\'entreprise'],
-      '.tech-grid .tech-card:nth-child(3) .tech-desc': ['Business intelligence', 'Intelligence d\'affaires'],
-      '.tech-grid .tech-card:nth-child(4) .tech-desc': ['Data visualization', 'Visualisation de données'],
-      '.tech-grid .tech-card:nth-child(5) .tech-desc': ['Data engineering', 'Ingénierie des données'],
       '.why .section-eyebrow': ['WHY CHOOSE SONADIVE', 'POURQUOI CHOISIR SONADIVE'],
       '.why h2': {h:['Your Success is<br>Data-Driven', 'Votre Succès est<br>Orienté Données']},
       '.why-item:nth-child(1) h4': ['Data-Driven Decisions', 'Décisions basées sur les données'],
@@ -311,20 +307,33 @@
       });
     }
     document.documentElement.lang = lang;
+    // Legacy single-button toggle (mobile menu)
     document.querySelectorAll('.lang-toggle').forEach(btn => {
       btn.textContent = lang === 'en' ? 'FR' : 'EN';
     });
+    // EN | FR switch in the navbar
+    document.querySelectorAll('.lang-opt').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  function setLang(next) {
+    if (next === lang) return;
+    lang = next;
+    localStorage.setItem(KEY, lang);
+    apply();
   }
 
   function toggle() {
-    lang = lang === 'en' ? 'fr' : 'en';
-    localStorage.setItem(KEY, lang);
-    apply();
+    setLang(lang === 'en' ? 'fr' : 'en');
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.lang-toggle').forEach(btn => {
       btn.addEventListener('click', toggle);
+    });
+    document.querySelectorAll('.lang-opt').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
     apply();
   });

@@ -6,35 +6,6 @@
   if (typeof gsap === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
-  // ── Custom Cursor ──────────────────────────────────────────────
-  const cursor    = document.querySelector('.cursor');
-  const cursorDot = document.querySelector('.cursor-dot');
-
-  if (cursor && cursorDot && window.innerWidth > 1024) {
-    let mx = 0, my = 0, cx = 0, cy = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      gsap.to(cursorDot, { x: mx - 3, y: my - 3, duration: 0.08, overwrite: true });
-    });
-
-    (function tick() {
-      cx += (mx - cx) * 0.1;
-      cy += (my - cy) * 0.1;
-      gsap.set(cursor, { x: cx - 16, y: cy - 16 });
-      requestAnimationFrame(tick);
-    })();
-
-    const hoverEls = document.querySelectorAll('a, button, .service-card, .cs-card, .tech-card, .why-item, .value-card, .industry-card');
-    hoverEls.forEach(el => {
-      el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2, opacity: 0.5, duration: 0.3 }));
-      el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.3 }));
-    });
-  } else if (cursor) {
-    cursor.style.display = 'none';
-    if (cursorDot) cursorDot.style.display = 'none';
-  }
-
   // ── Scroll Progress Bar ────────────────────────────────────────
   const progressBar = document.querySelector('.scroll-progress');
   if (progressBar) {
@@ -103,7 +74,7 @@
       .from('.hero h1',     { y: 48, opacity: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
       .from('.hero-sub',    { y: 32, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
       .from('.hero-cta > *', { y: 20, opacity: 0, stagger: 0.12, duration: 0.5, ease: 'power3.out' }, '-=0.4')
-      .from('.hero-float', { y: 20, opacity: 0, stagger: 0.15, duration: 0.7, ease: 'power3.out' }, '-=0.4');
+      .from('.hero-canvas', { opacity: 0, duration: 1.1, ease: 'power2.out' }, '-=0.9');
   }
 
   // ── Services Grid ─────────────────────────────────────────────
@@ -118,15 +89,15 @@
     });
   }
 
-  // ── Tech Stack Cards ───────────────────────────────────────────
-  const techCards = gsap.utils.toArray('.tech-card');
-  if (techCards.length) {
-    gsap.set(techCards, { y: 40, opacity: 0, scale: 0.94 });
+  // ── Tech Stack Logos ───────────────────────────────────────────
+  const techLogos = gsap.utils.toArray('.tech-logo');
+  if (techLogos.length) {
+    gsap.set(techLogos, { y: 22, opacity: 0 });
     ScrollTrigger.create({
-      trigger: '.tech-grid',
+      trigger: '.tech-strip',
       start: 'top 88%',
       once: true,
-      onEnter: () => gsap.to(techCards, { y: 0, opacity: 1, scale: 1, stagger: 0.1, duration: 0.65, ease: 'back.out(1.6)' })
+      onEnter: () => gsap.to(techLogos, { y: 0, opacity: 0.88, stagger: 0.08, duration: 0.55, ease: 'power3.out' })
     });
   }
 
@@ -211,18 +182,6 @@
     gsap.from(el, {
       y: 24, opacity: 0, duration: 0.6, delay: i * 0.07, ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 95%', once: true }
-    });
-  });
-
-  // ── Button Ripple ────────────────────────────────────────────
-  document.querySelectorAll('.btn-primary').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      const r = document.createElement('span');
-      r.className = 'ripple';
-      const rect = this.getBoundingClientRect();
-      r.style.cssText = `left:${e.clientX - rect.left}px;top:${e.clientY - rect.top}px`;
-      this.appendChild(r);
-      r.addEventListener('animationend', () => r.remove());
     });
   });
 
