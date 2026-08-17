@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="biBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1626"/>
+      <stop offset="1" stop-color="#080d18"/>
+    </linearGradient>
+    <linearGradient id="biGold" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#f4b400"/>
+      <stop offset="1" stop-color="#ffce45"/>
+    </linearGradient>
+    <linearGradient id="biBlue" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="biGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="biClip"><rect width="600" height="400" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#biClip)">
+    <rect width="600" height="400" fill="url(#biBg)"/>
+    <g stroke="#ffffff" stroke-opacity=".025">
+      <path d="M0 100H600M0 200H600M0 300H600"/>
+      <path d="M150 0V400M300 0V400M450 0V400"/>
+    </g>
+    <circle cx="560" cy="360" r="160" fill="#f4b400" opacity=".05"/>
+
+    <!-- big KPI panel -->
+    <rect x="40" y="44" width="250" height="130" rx="14" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="60" y="74" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="1.6">GROSS MARGIN</text>
+    <text x="60" y="116" font-size="34" fill="#f0f4ff" font-weight="800">41.7%</text>
+    <rect x="60" y="132" width="88" height="20" rx="10" fill="#2dd4bf" opacity=".14"/>
+    <text x="104" y="146" text-anchor="middle" font-size="9.5" fill="#2dd4bf" font-weight="700">▲ +2.3 pts</text>
+    <!-- sparkline -->
+    <path d="M170 150 L190 142 L210 146 L230 130 L250 122 L272 106" fill="none" stroke="url(#biGold)" stroke-width="2.4" stroke-linecap="round" filter="url(#biGlow)"/>
+    <circle cx="272" cy="106" r="4" fill="#ffce45" filter="url(#biGlow)"/>
+
+    <!-- gauge panel -->
+    <rect x="306" y="44" width="254" height="130" rx="14" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="326" y="74" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="1.6">TARGET ATTAINMENT</text>
+    <g transform="translate(433 148)">
+      <path d="M-62 0 A 62 62 0 0 1 62 0" fill="none" stroke="#1a2740" stroke-width="13" stroke-linecap="round"/>
+      <path d="M-62 0 A 62 62 0 0 1 34 -51.8" fill="none" stroke="url(#biGold)" stroke-width="13" stroke-linecap="round" filter="url(#biGlow)"/>
+      <text y="-8" text-anchor="middle" font-size="24" fill="#f0f4ff" font-weight="800">87%</text>
+      <text y="7" text-anchor="middle" font-size="8" fill="#5a6a88" letter-spacing="1.4">OF PLAN</text>
+    </g>
+
+    <!-- bar chart panel -->
+    <rect x="40" y="190" width="330" height="166" rx="14" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="60" y="218" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="1.6">SALES BY REGION</text>
+    <g>
+      <rect x="66" y="296" width="30" height="38" rx="4" fill="url(#biBlue)" opacity=".85"/>
+      <rect x="116" y="276" width="30" height="58" rx="4" fill="url(#biBlue)" opacity=".85"/>
+      <rect x="166" y="252" width="30" height="82" rx="4" fill="url(#biGold)"/>
+      <rect x="216" y="284" width="30" height="50" rx="4" fill="url(#biBlue)" opacity=".85"/>
+      <rect x="266" y="262" width="30" height="72" rx="4" fill="url(#biGold)" opacity=".8"/>
+      <rect x="316" y="300" width="30" height="34" rx="4" fill="url(#biBlue)" opacity=".7"/>
+    </g>
+    <g font-size="8" fill="#4a5a78" text-anchor="middle">
+      <text x="81" y="348">EMEA</text><text x="131" y="348">NA</text><text x="181" y="348">APAC</text>
+      <text x="231" y="348">LATAM</text><text x="281" y="348">AFR</text><text x="331" y="348">ANZ</text>
+    </g>
+
+    <!-- ranked list panel -->
+    <rect x="386" y="190" width="174" height="166" rx="14" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="404" y="218" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="1.6">TOP PRODUCTS</text>
+    <g font-size="9" fill="#aab4c4" font-weight="600">
+      <text x="404" y="242">Atlas Suite</text>
+      <rect x="404" y="248" width="138" height="5" rx="2.5" fill="#1a2740"/><rect x="404" y="248" width="126" height="5" rx="2.5" fill="url(#biGold)"/>
+      <text x="404" y="274">Nova CRM</text>
+      <rect x="404" y="280" width="138" height="5" rx="2.5" fill="#1a2740"/><rect x="404" y="280" width="96" height="5" rx="2.5" fill="#60a5fa"/>
+      <text x="404" y="306">Pulse IoT</text>
+      <rect x="404" y="312" width="138" height="5" rx="2.5" fill="#1a2740"/><rect x="404" y="312" width="72" height="5" rx="2.5" fill="#2dd4bf"/>
+      <text x="404" y="338">Orbit API</text>
+      <rect x="404" y="344" width="138" height="5" rx="2.5" fill="#1a2740"/><rect x="404" y="344" width="52" height="5" rx="2.5" fill="#8a9ab5"/>
+    </g>
+  </g>
+  <rect x=".5" y=".5" width="599" height="399" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</svg>

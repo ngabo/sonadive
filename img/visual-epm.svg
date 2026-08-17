@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="epBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1626"/>
+      <stop offset="1" stop-color="#080d18"/>
+    </linearGradient>
+    <linearGradient id="epGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f4b400"/>
+      <stop offset="1" stop-color="#ffce45"/>
+    </linearGradient>
+    <linearGradient id="epArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4b400" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#f4b400" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="epBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity=".02"/>
+    </linearGradient>
+    <filter id="epGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="epClip"><rect width="600" height="400" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#epClip)">
+    <rect width="600" height="400" fill="url(#epBg)"/>
+    <g stroke="#ffffff" stroke-opacity=".03">
+      <path d="M0 80H600M0 150H600M0 220H600M0 290H600"/>
+      <path d="M110 0V400M220 0V400M330 0V400M440 0V400M550 0V400"/>
+    </g>
+    <circle cx="70" cy="50" r="150" fill="#f4b400" opacity=".05"/>
+
+    <text x="48" y="52" font-size="10" fill="#aab4c4" font-weight="700" letter-spacing="1.5">SCENARIO PLANNING — FY26</text>
+
+    <!-- history / forecast divider -->
+    <rect x="330" y="70" width="222" height="250" fill="url(#epBand)"/>
+    <path d="M330 70V320" stroke="#60a5fa" stroke-opacity=".4" stroke-dasharray="4 5"/>
+    <text x="338" y="86" font-size="8.5" fill="#60a5fa" font-weight="700" letter-spacing="1.5">FORECAST →</text>
+
+    <!-- scenario cone -->
+    <path d="M330 208 C 400 190, 470 158, 552 118 L 552 268 C 470 250, 400 234, 330 208 Z" fill="#f4b400" opacity=".07"/>
+    <!-- upside -->
+    <path d="M330 208 C 400 188, 470 156, 552 120" fill="none" stroke="#2dd4bf" stroke-width="1.8" stroke-dasharray="6 5" stroke-linecap="round" opacity=".75"/>
+    <!-- downside -->
+    <path d="M330 208 C 400 226, 470 244, 552 262" fill="none" stroke="#8a9ab5" stroke-width="1.5" stroke-dasharray="4 5" stroke-linecap="round" opacity=".55"/>
+    <!-- history + base -->
+    <path d="M48 292 L118 276 L188 282 L258 246 L330 208 L 400 202, 470 186 L552 168 L552 320 L48 320 Z" fill="url(#epArea)"/>
+    <path d="M48 292 L118 276 L188 282 L258 246 L330 208" fill="none" stroke="url(#epGold)" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M330 208 C 400 202, 470 190, 552 168" fill="none" stroke="url(#epGold)" stroke-width="2.8" stroke-linecap="round" filter="url(#epGlow)"/>
+    <circle cx="330" cy="208" r="5" fill="#ffce45" filter="url(#epGlow)"/>
+    <g fill="#f4b400">
+      <circle cx="118" cy="276" r="3.4"/><circle cx="188" cy="282" r="3.4"/><circle cx="258" cy="246" r="3.4"/>
+    </g>
+
+    <!-- scenario labels -->
+    <g font-size="9" font-weight="700">
+      <rect x="482" y="98" width="76" height="22" rx="11" fill="#0d1626" stroke="#2dd4bf" stroke-opacity=".5"/>
+      <text x="520" y="112" text-anchor="middle" fill="#2dd4bf">UPSIDE +18%</text>
+      <rect x="486" y="152" width="68" height="22" rx="11" fill="#f4b400"/>
+      <text x="520" y="166" text-anchor="middle" fill="#0a1220">BASE +9%</text>
+      <rect x="480" y="266" width="80" height="22" rx="11" fill="#0d1626" stroke="#8a9ab5" stroke-opacity=".4"/>
+      <text x="520" y="280" text-anchor="middle" fill="#8a9ab5">DOWNSIDE -4%</text>
+    </g>
+
+    <!-- driver chips -->
+    <g font-size="8.5" font-weight="600">
+      <rect x="48" y="336" width="118" height="26" rx="13" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+      <circle cx="64" cy="349" r="3" fill="#f4b400"/><text x="74" y="353" fill="#aab4c4">Driver: Pricing</text>
+      <rect x="176" y="336" width="126" height="26" rx="13" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+      <circle cx="192" cy="349" r="3" fill="#60a5fa"/><text x="202" y="353" fill="#aab4c4">Driver: Headcount</text>
+      <rect x="312" y="336" width="112" height="26" rx="13" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+      <circle cx="328" cy="349" r="3" fill="#2dd4bf"/><text x="338" y="353" fill="#aab4c4">Driver: Volume</text>
+      <rect x="434" y="336" width="94" height="26" rx="13" fill="#101a2e" stroke="#ffffff" stroke-opacity=".08"/>
+      <circle cx="450" cy="349" r="3" fill="#ffce45"/><text x="460" y="353" fill="#aab4c4">Driver: FX</text>
+    </g>
+  </g>
+  <rect x=".5" y=".5" width="599" height="399" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</svg>

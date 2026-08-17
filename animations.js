@@ -68,14 +68,40 @@
   }
 
   // ── Hero Entrance ──────────────────────────────────────────────
-  if (document.querySelector('.hero-badge')) {
-    gsap.timeline({ delay: 0.15 })
-      .from('.hero-badge',  { y: 24, opacity: 0, duration: 0.7, ease: 'power3.out' })
-      .from('.hero h1',     { y: 48, opacity: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
+  if (document.querySelector('.hero h1')) {
+    const heroTl = gsap.timeline({ delay: 0.15 })
+      .from('.hero h1',     { y: 48, opacity: 0, duration: 0.9, ease: 'power3.out' })
       .from('.hero-sub',    { y: 32, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
       .from('.hero-cta > *', { y: 20, opacity: 0, stagger: 0.12, duration: 0.5, ease: 'power3.out' }, '-=0.4')
       .from('.hero-canvas', { opacity: 0, duration: 1.1, ease: 'power2.out' }, '-=0.9');
+    if (document.querySelector('.hero-visual')) {
+      heroTl.from('.hero-visual', { x: 48, opacity: 0, duration: 1, ease: 'power3.out' }, '-=1.1');
+    }
   }
+
+  // ── Hero Visual: cursor-follow 3D tilt ─────────────────────────
+  (function () {
+    const hero = document.querySelector('.hero');
+    const frame = document.querySelector('.hero-visual-frame');
+    if (!hero || !frame) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(min-width: 1025px)').matches) return;
+
+    const BASE_Y = -8, BASE_X = 3; // resting tilt (matches the CSS)
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width  * 2 - 1;  // -1 … 1
+      const ny = (e.clientY - r.top)  / r.height * 2 - 1;
+      gsap.to(frame, {
+        rotationY: BASE_Y + nx * 7,
+        rotationX: BASE_X - ny * 5,
+        duration: 0.7, ease: 'power2.out', overwrite: 'auto'
+      });
+    });
+    hero.addEventListener('mouseleave', () => {
+      gsap.to(frame, { rotationY: BASE_Y, rotationX: BASE_X, duration: 1, ease: 'power3.out', overwrite: 'auto' });
+    });
+  })();
 
   // ── Services Grid ─────────────────────────────────────────────
   const svcCards = gsap.utils.toArray('.service-card');

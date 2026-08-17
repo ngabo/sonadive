@@ -20,7 +20,7 @@
   // Palette: blue / gold / white / dim — mirrors the brand accents
   const PALETTE = [
     { c: '59,158,255',  w: 30 },  // blue
-    { c: '232,160,32',  w: 28 },  // gold
+    { c: '244,180,0',   w: 28 },  // gold
     { c: '255,255,255', w: 22 },  // white
     { c: '120,140,170', w: 20 },  // dim slate
   ];

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="anBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1626"/>
+      <stop offset="1" stop-color="#080d18"/>
+    </linearGradient>
+    <linearGradient id="anGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f4b400"/>
+      <stop offset="1" stop-color="#ffce45"/>
+    </linearGradient>
+    <linearGradient id="anArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4b400" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#f4b400" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="anGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="anClip"><rect width="600" height="400" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#anClip)">
+    <rect width="600" height="400" fill="url(#anBg)"/>
+    <g stroke="#ffffff" stroke-opacity=".03">
+      <path d="M0 90H600M0 165H600M0 240H600M0 315H600"/>
+      <path d="M120 0V400M240 0V400M360 0V400M480 0V400"/>
+    </g>
+    <circle cx="80" cy="330" r="150" fill="#3b82f6" opacity=".05"/>
+    <circle cx="530" cy="70" r="150" fill="#f4b400" opacity=".05"/>
+
+    <!-- magnifier over data -->
+    <g transform="translate(210 178)">
+      <circle r="104" fill="#101a2e" stroke="#ffffff" stroke-opacity=".1" stroke-width="1.4"/>
+      <circle r="104" fill="none" stroke="url(#anGold)" stroke-width="2.4" opacity=".85"/>
+      <rect x="76" y="86" width="86" height="17" rx="8.5" transform="rotate(45 76 86)" fill="url(#anGold)"/>
+      <!-- data inside lens -->
+      <g clip-path="none">
+        <path d="M-72 46 L-42 26 L-12 34 L18 4 L48 -12 L74 -34" fill="none" stroke="url(#anGold)" stroke-width="3" stroke-linecap="round" filter="url(#anGlow)"/>
+        <circle cx="74" cy="-34" r="5" fill="#ffce45" filter="url(#anGlow)"/>
+        <g fill="#60a5fa" opacity=".85">
+          <rect x="-70" y="-64" width="12" height="34" rx="3"/>
+          <rect x="-48" y="-76" width="12" height="46" rx="3"/>
+          <rect x="-26" y="-58" width="12" height="28" rx="3"/>
+        </g>
+        <g stroke="#2dd4bf" stroke-opacity=".55">
+          <circle cx="34" cy="52" r="3.2" fill="#2dd4bf" stroke="none"/>
+          <circle cx="52" cy="38" r="2.6" fill="#2dd4bf" stroke="none"/>
+          <circle cx="20" cy="66" r="2.2" fill="#2dd4bf" stroke="none"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- insight cards right -->
+    <g font-weight="700">
+      <rect x="366" y="70" width="192" height="64" rx="12" fill="#101a2e" stroke="#ffffff" stroke-opacity=".09"/>
+      <circle cx="392" cy="102" r="12" fill="#f4b400" opacity=".14"/>
+      <path d="M388 106l3-6 2.5 3 3.5-6" stroke="#f4b400" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <text x="414" y="97" font-size="10.5" fill="#f0f4ff">Churn risk detected</text>
+      <text x="414" y="113" font-size="8.5" fill="#5a6a88" font-weight="500">Segment B · confidence 94%</text>
+
+      <rect x="366" y="148" width="192" height="64" rx="12" fill="#101a2e" stroke="#ffffff" stroke-opacity=".09"/>
+      <circle cx="392" cy="180" r="12" fill="#2dd4bf" opacity=".14"/>
+      <path d="M386 180h12M392 174v12" stroke="#2dd4bf" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="414" y="175" font-size="10.5" fill="#f0f4ff">Upsell opportunity</text>
+      <text x="414" y="191" font-size="8.5" fill="#5a6a88" font-weight="500">+$1.2M pipeline identified</text>
+
+      <rect x="366" y="226" width="192" height="64" rx="12" fill="#101a2e" stroke="#f4b400" stroke-opacity=".4"/>
+      <circle cx="392" cy="258" r="12" fill="#f4b400"/>
+      <path d="M392 251v9M392 264v.5" stroke="#0a1220" stroke-width="2" stroke-linecap="round"/>
+      <text x="414" y="253" font-size="10.5" fill="#f4b400">Action recommended</text>
+      <text x="414" y="269" font-size="8.5" fill="#5a6a88" font-weight="500">Rebalance inventory · Week 32</text>
+    </g>
+
+    <!-- flow dots from lens to cards -->
+    <g fill="none" stroke-opacity=".3" stroke-dasharray="2 5" stroke-linecap="round">
+      <path d="M312 140 C 336 122, 344 112, 362 102" stroke="#f4b400"/>
+      <path d="M316 178 C 336 178, 344 179, 362 180" stroke="#2dd4bf"/>
+      <path d="M312 216 C 336 234, 344 246, 362 256" stroke="#f4b400"/>
+    </g>
+
+    <text x="48" y="352" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="2">RAW DATA → INSIGHT → ACTION</text>
+  </g>
+  <rect x=".5" y=".5" width="599" height="399" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</svg>

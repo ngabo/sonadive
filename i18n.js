@@ -65,9 +65,8 @@
   const PAGE_MAPS = {
 
     home: {
-      '.hero-badge':   ['Trusted Business Analytics and AI Consulting', "Conseil de Confiance en Analytique d'Entreprise et IA"],
-      '.hero h1':      {h:['Transform Data Into<br><span class="gold-text">Competitive Advantage.</span>',
-                          'Transformez vos Données en<br><span class="gold-text">Avantage Concurrentiel.</span>']},
+      '.hero h1':      {h:['Dive Deeper.<br><span class="gold-text">Deliver Value.</span>',
+                          'Plongez Plus Profond.<br><span class="gold-text">Livrez Plus de Valeur.</span>']},
       '.hero-sub':     ['We build enterprise planning, analytics and AI solutions that help finance, supply chain and executive teams make faster, smarter decisions.',
                         "Nous concevons des solutions de planification, d'analytique et d'IA qui aident les équipes finance, supply chain et direction à décider plus vite et mieux."],
       '.hero-cta a.btn-primary':  ['Book a Consultation →', 'Réserver une consultation →'],

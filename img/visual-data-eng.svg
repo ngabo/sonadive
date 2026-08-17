@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="deBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1626"/>
+      <stop offset="1" stop-color="#080d18"/>
+    </linearGradient>
+    <linearGradient id="dePipe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f4b400" stop-opacity=".7"/>
+    </linearGradient>
+    <filter id="deGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="deClip"><rect width="600" height="400" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#deClip)">
+    <rect width="600" height="400" fill="url(#deBg)"/>
+    <g stroke="#ffffff" stroke-opacity=".025">
+      <path d="M0 80H600M0 160H600M0 240H600M0 320H600"/>
+      <path d="M120 0V400M240 0V400M360 0V400M480 0V400"/>
+    </g>
+    <circle cx="540" cy="60" r="150" fill="#f4b400" opacity=".05"/>
+    <circle cx="60" cy="360" r="140" fill="#3b82f6" opacity=".06"/>
+
+    <!-- SOURCES column -->
+    <text x="88" y="66" text-anchor="middle" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="2">SOURCES</text>
+    <g>
+      <rect x="40" y="84" width="96" height="44" rx="10" fill="#101a2e" stroke="#3b82f6" stroke-opacity=".35"/>
+      <circle cx="62" cy="106" r="8" fill="none" stroke="#60a5fa" stroke-width="1.6"/><path d="M58 106h8M62 102v8" stroke="#60a5fa" stroke-width="1.4"/>
+      <text x="78" y="110" font-size="10" fill="#aab4c4" font-weight="600">ERP</text>
+
+      <rect x="40" y="142" width="96" height="44" rx="10" fill="#101a2e" stroke="#3b82f6" stroke-opacity=".35"/>
+      <rect x="55" y="157" width="14" height="14" rx="3" fill="none" stroke="#60a5fa" stroke-width="1.6"/>
+      <text x="78" y="168" font-size="10" fill="#aab4c4" font-weight="600">CRM</text>
+
+      <rect x="40" y="200" width="96" height="44" rx="10" fill="#101a2e" stroke="#3b82f6" stroke-opacity=".35"/>
+      <path d="M55 229l6-9 5 5 6-8" fill="none" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="78" y="226" font-size="10" fill="#aab4c4" font-weight="600">Apps</text>
+
+      <rect x="40" y="258" width="96" height="44" rx="10" fill="#101a2e" stroke="#3b82f6" stroke-opacity=".35"/>
+      <ellipse cx="62" cy="275" rx="8" ry="3.4" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+      <path d="M54 275v10c0 1.9 3.6 3.4 8 3.4s8-1.5 8-3.4v-10" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+      <text x="78" y="284" font-size="10" fill="#aab4c4" font-weight="600">Files</text>
+    </g>
+
+    <!-- pipes to ETL -->
+    <g fill="none" stroke="url(#dePipe)" stroke-width="1.6">
+      <path d="M136 106 C 190 106, 200 160, 248 174"/>
+      <path d="M136 164 C 185 164, 200 176, 248 186"/>
+      <path d="M136 222 C 185 222, 200 208, 248 198"/>
+      <path d="M136 280 C 190 280, 200 226, 248 210"/>
+    </g>
+    <!-- moving data dots -->
+    <g filter="url(#deGlow)">
+      <circle cx="176" cy="122" r="3" fill="#60a5fa"/>
+      <circle cx="205" cy="172" r="2.6" fill="#ffce45"/>
+      <circle cx="182" cy="243" r="3" fill="#2dd4bf"/>
+      <circle cx="214" cy="238" r="2.4" fill="#60a5fa"/>
+    </g>
+
+    <!-- TRANSFORM hub -->
+    <text x="300" y="120" text-anchor="middle" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="2">TRANSFORM</text>
+    <rect x="248" y="140" width="104" height="120" rx="14" fill="#101a2e" stroke="#f4b400" stroke-opacity=".55" stroke-width="1.4"/>
+    <g stroke="#f4b400" stroke-width="1.7" fill="none" stroke-linecap="round" filter="url(#deGlow)">
+      <path d="M282 172 a 18 18 0 1 1 -5 12" />
+      <path d="M272 178 l5 6 7-3" />
+    </g>
+    <g font-size="8.5" fill="#8a9ab5" font-weight="600">
+      <text x="300" y="222" text-anchor="middle">Cleanse · Model</text>
+      <text x="300" y="238" text-anchor="middle">Orchestrate</text>
+    </g>
+
+    <!-- pipe to warehouse -->
+    <path d="M352 200 C 390 200, 400 200, 436 200" fill="none" stroke="url(#dePipe)" stroke-width="2"/>
+    <circle cx="394" cy="200" r="3.2" fill="#ffce45" filter="url(#deGlow)"/>
+
+    <!-- WAREHOUSE -->
+    <text x="505" y="120" text-anchor="middle" font-size="9" fill="#5a6a88" font-weight="700" letter-spacing="2">WAREHOUSE</text>
+    <g>
+      <ellipse cx="505" cy="152" rx="66" ry="16" fill="#101a2e" stroke="#f4b400" stroke-opacity=".6" stroke-width="1.4"/>
+      <path d="M439 152v88c0 8.8 29.5 16 66 16s66-7.2 66-16v-88" fill="#101a2e" stroke="#f4b400" stroke-opacity=".6" stroke-width="1.4"/>
+      <path d="M439 182c0 8.8 29.5 16 66 16s66-7.2 66-16M439 212c0 8.8 29.5 16 66 16s66-7.2 66-16" fill="none" stroke="#f4b400" stroke-opacity=".3" stroke-width="1.2"/>
+      <ellipse cx="505" cy="152" rx="66" ry="16" fill="#f4b400" opacity=".07"/>
+    </g>
+
+    <!-- outputs -->
+    <g fill="none" stroke-width="1.6">
+      <path d="M505 256 C 505 286, 505 292, 505 306" stroke="#2dd4bf" stroke-opacity=".5"/>
+      <path d="M470 252 C 430 286, 410 296, 384 314" stroke="#2dd4bf" stroke-opacity=".4"/>
+    </g>
+    <rect x="452" y="306" width="106" height="34" rx="9" fill="#101a2e" stroke="#2dd4bf" stroke-opacity=".45"/>
+    <text x="505" y="327" text-anchor="middle" font-size="9.5" fill="#2dd4bf" font-weight="700">BI &amp; DASHBOARDS</text>
+    <rect x="298" y="314" width="86" height="34" rx="9" fill="#101a2e" stroke="#2dd4bf" stroke-opacity=".45"/>
+    <text x="341" y="335" text-anchor="middle" font-size="9.5" fill="#2dd4bf" font-weight="700">AI MODELS</text>
+  </g>
+  <rect x=".5" y=".5" width="599" height="399" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</svg>
