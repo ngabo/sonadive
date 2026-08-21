@@ -67,10 +67,27 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   }
 
+  // ── Hero background video: keep it playing ─────────────────────
+  // Browsers suspend autoplay when the tab loads hidden or on power saving;
+  // retry on load and whenever the tab becomes visible again.
+  (function () {
+    const video = document.querySelector('.hero-video');
+    if (!video) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const tryPlay = () => { const p = video.play(); if (p) p.catch(() => {}); };
+    tryPlay();
+    document.addEventListener('visibilitychange', () => { if (!document.hidden && video.paused) tryPlay(); });
+    window.addEventListener('pageshow', tryPlay);
+  })();
+
   // ── Hero Entrance ──────────────────────────────────────────────
   if (document.querySelector('.hero h1')) {
-    const heroTl = gsap.timeline({ delay: 0.15 })
-      .from('.hero h1',     { y: 48, opacity: 0, duration: 0.9, ease: 'power3.out' })
+    const heroTl = gsap.timeline({ delay: 0.15 });
+    if (document.querySelector('.hero-badge')) {
+      heroTl.from('.hero-badge', { y: 24, opacity: 0, duration: 0.6, ease: 'power3.out' });
+    }
+    heroTl
+      .from('.hero h1',     { y: 48, opacity: 0, duration: 0.9, ease: 'power3.out' }, '-=0.25')
       .from('.hero-sub',    { y: 32, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
       .from('.hero-cta > *', { y: 20, opacity: 0, stagger: 0.12, duration: 0.5, ease: 'power3.out' }, '-=0.4')
       .from('.hero-canvas', { opacity: 0, duration: 1.1, ease: 'power2.out' }, '-=0.9');

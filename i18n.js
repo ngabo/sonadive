@@ -65,6 +65,8 @@
   const PAGE_MAPS = {
 
     home: {
+      '.hero-badge':   {h:['Enterprise Planning &middot; Analytics &middot; AI',
+                          "Planification d'entreprise &middot; Analytique &middot; IA"]},
       '.hero h1':      {h:['Dive Deeper.<br><span class="gold-text">Deliver Value.</span>',
                           'Plongez Plus Profond.<br><span class="gold-text">Livrez Plus de Valeur.</span>']},
       '.hero-sub':     ['We build enterprise planning, analytics and AI solutions that help finance, supply chain and executive teams make faster, smarter decisions.',
