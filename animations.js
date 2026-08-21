@@ -74,7 +74,7 @@
     const video = document.querySelector('.hero-video');
     if (!video) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    video.playbackRate = 0.8; // slightly slower for a calmer, more cinematic feel
+    video.playbackRate = 0.7; // slightly slower for a calmer, more cinematic feel
     const tryPlay = () => { const p = video.play(); if (p) p.catch(() => {}); };
     tryPlay();
     document.addEventListener('visibilitychange', () => { if (!document.hidden && video.paused) tryPlay(); });
