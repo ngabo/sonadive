@@ -121,16 +121,72 @@
     });
   })();
 
-  // ── Services Grid ─────────────────────────────────────────────
-  const svcCards = gsap.utils.toArray('.service-card');
+  // ── Service cards: hover a card → its visual pops up ───────────
+  const svcCards = gsap.utils.toArray('.services-grid .service-card');
   if (svcCards.length) {
-    gsap.set(svcCards, { y: 50, opacity: 0 });
+    gsap.set(svcCards, { y: 34, opacity: 0 });
     ScrollTrigger.create({
       trigger: '.services-grid',
-      start: 'top 86%',
+      start: 'top 88%',
       once: true,
-      onEnter: () => gsap.to(svcCards, { y: 0, opacity: 1, stagger: 0.08, duration: 0.7, ease: 'power3.out' })
+      onEnter: () => gsap.to(svcCards, { y: 0, opacity: 1, stagger: 0.07, duration: 0.6, ease: 'power3.out' })
     });
+
+    const showcase = document.querySelector('.services-showcase');
+    const strip    = document.querySelector('.services-grid');
+    const popup    = document.querySelector('.services-popup');
+    const popImg   = popup && popup.querySelector('.popup-img');
+    const popTitle = popup && popup.querySelector('.popup-caption-title');
+    // Preload so the pop-up never flashes an empty frame
+    svcCards.forEach(c => { const src = c.dataset.img; if (src) new Image().src = src; });
+
+    let openIdx = -1;
+
+    const open = (idx) => {
+      if (!popup || idx === openIdx) return;
+      openIdx = idx;
+      const card = svcCards[idx];
+      svcCards.forEach((c, k) => c.classList.toggle('is-active', k === idx));
+
+      const title = card.querySelector('h3');
+      if (popImg && card.dataset.img) popImg.src = card.dataset.img;
+      if (popTitle && title) popTitle.textContent = title.textContent;
+
+      const box    = showcase.getBoundingClientRect();
+      const cell   = card.getBoundingClientRect();
+      const width  = popup.offsetWidth;
+      const height = popup.offsetHeight;
+      const gap    = 14;
+
+      // Cards in the lower half flip the popup above so it never leaves the section
+      const above = (card.offsetTop + card.offsetHeight / 2) > strip.offsetHeight / 2;
+      popup.classList.toggle('is-above', above);
+      popup.style.top = above
+        ? (card.offsetTop - height - gap) + 'px'
+        : (card.offsetTop + card.offsetHeight + gap) + 'px';
+
+      // Centre the popup on the hovered card, kept inside the showcase
+      const centre = (cell.left - box.left) + cell.width / 2;
+      const x      = Math.max(0, Math.min(centre - width / 2, box.width - width));
+      popup.style.setProperty('--px', x + 'px');
+      // Keep the pointer aimed at the card even when clamped at an edge
+      popup.style.setProperty('--ax', Math.max(24, Math.min(centre - x, width - 24)) + 'px');
+      popup.classList.add('is-open');
+    };
+
+    const close = () => {
+      openIdx = -1;
+      svcCards.forEach(c => c.classList.remove('is-active'));
+      if (popup) popup.classList.remove('is-open');
+    };
+
+    svcCards.forEach((card, i) => {
+      card.addEventListener('mouseenter', () => open(i));
+      card.addEventListener('focus', () => open(i));
+      card.addEventListener('blur', close);
+    });
+    if (strip) strip.addEventListener('mouseleave', close);
+    window.addEventListener('resize', close);
   }
 
   // ── Tech Stack Logos ───────────────────────────────────────────

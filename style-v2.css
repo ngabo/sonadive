@@ -457,88 +457,145 @@ body {
   margin-bottom: 48px; line-height: 1.7; max-width: 500px;
   margin-left: auto; margin-right: auto;
 }
+/* Service cards in two rows of three — the visual pops up on the hovered card */
+.services-showcase { position: relative; max-width: 1120px; margin: 0 auto; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 .service-card {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 21px 22px 20px;
   background: #fff;
-  border-radius: 14px;
-  padding: 0;
-  border: 1px solid #eaecf5;
-  display: flex; flex-direction: column; align-items: stretch; gap: 0;
-  position: relative; overflow: hidden;
-  transition: transform .35s cubic-bezier(.22,.68,0,1.2), box-shadow .35s, border-color .35s;
-  cursor: pointer;
-  will-change: transform;
+  border: 1px solid #e9ecf5;
+  border-radius: 16px;
+  text-decoration: none; cursor: pointer; outline: none;
+  overflow: hidden;
+  transition: transform .4s cubic-bezier(.22,.68,0,1),
+              box-shadow .4s, border-color .4s;
 }
-/* Card artwork */
-.svc-img {
-  display: block; overflow: hidden;
-  border-bottom: 1px solid #eaecf5;
-  background: #0a1220;
-}
-.svc-img img {
-  display: block; width: 100%; height: 148px;
-  object-fit: cover; object-position: top center;
-  transition: transform .5s cubic-bezier(.22,.68,0,1);
-}
-.service-card:hover .svc-img img { transform: scale(1.045); }
-/* Icon + text row under the artwork */
-.svc-row {
-  display: flex; flex-direction: row; align-items: flex-start; gap: 14px;
-  padding: 16px 18px;
-}
+/* warm wash + gold cap that arrive together on hover */
 .service-card::before {
   content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(244,180,0,0.05), transparent 60%);
-  opacity: 0; transition: opacity .35s; border-radius: 14px;
+  position: absolute; inset: 0; border-radius: 16px;
+  background: linear-gradient(150deg, rgba(244,180,0,.085), transparent 58%);
+  opacity: 0; transition: opacity .4s;
 }
 .service-card::after {
   content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px;
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, #f4b400, #ffce45);
   transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.22,.68,0,1);
-  border-radius: 0 0 14px 14px;
+  transition: transform .45s cubic-bezier(.22,.68,0,1);
 }
-.service-card:hover {
+.service-card.is-active {
   transform: translateY(-5px);
-  box-shadow: 0 20px 48px rgba(10,18,37,.1), 0 0 0 1px rgba(244,180,0,0.18), 0 8px 24px rgba(244,180,0,0.06);
-  border-color: rgba(244,180,0,0.2);
+  border-color: rgba(244,180,0,.3);
+  box-shadow: 0 24px 52px rgba(10,18,37,.13), 0 0 0 1px rgba(244,180,0,.12);
 }
-.service-card:hover::before { opacity: 1; }
-.service-card:hover::after { transform: scaleX(1); }
+.service-card.is-active::before { opacity: 1; }
+.service-card.is-active::after  { transform: scaleX(1); }
+.service-card:focus-visible { box-shadow: 0 0 0 3px rgba(244,180,0,.4); }
 
-.service-icon {
-  width: 38px; height: 38px; min-width: 38px; border-radius: 10px;
-  background: #070d1a;
+.svc-icon {
+  position: relative; z-index: 1;
+  width: 38px; height: 38px; border-radius: 11px;
   display: flex; align-items: center; justify-content: center;
-  color: #f4b400; flex-shrink: 0;
-  transition: background .35s, transform .35s cubic-bezier(.22,.68,0,1.2), box-shadow .35s;
-  margin-top: 1px;
+  background: #070d1a; color: #f4b400;
+  margin-bottom: 12px;
+  transition: background .4s, color .4s, box-shadow .4s,
+              transform .45s cubic-bezier(.22,.68,0,1.25);
 }
-.service-card:hover .service-icon {
+.service-card.is-active .svc-icon {
   background: linear-gradient(135deg, #f4b400, #ffce45);
   color: #070d1a;
-  transform: rotate(8deg) scale(1.1);
-  box-shadow: 0 6px 18px rgba(244,180,0,0.35);
+  transform: rotate(-6deg) scale(1.08);
+  box-shadow: 0 10px 24px rgba(244,180,0,.36);
 }
-.svc-body { display: flex; flex-direction: column; gap: 3px; flex: 1; }
-.service-card h3 { font-size: 13.5px; font-weight: 700; color: #0a1225; margin: 0; letter-spacing: -0.1px; }
-.service-card p { font-size: 12px; color: #8a9ab5; line-height: 1.55; margin: 0; }
+.service-card h3 {
+  position: relative; z-index: 1;
+  font-size: 16px; font-weight: 800; letter-spacing: -0.3px;
+  color: #0a1225; margin: 0 0 5px; line-height: 1.3;
+}
+.service-card p {
+  position: relative; z-index: 1;
+  font-size: 12.8px; color: #7c8aa5; line-height: 1.55; margin: 0;
+}
+/* Sits quietly in the space under the copy and lights up with the card */
 .svc-link {
-  display: inline-flex; align-items: center; gap: 4px;
-  color: #f4b400; font-size: 11.5px; font-weight: 600;
-  text-decoration: none; margin-top: 7px;
-  transition: gap .2s;
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 10px;
+  color: #a4b0c6; font-size: 12px; font-weight: 700;
+  text-decoration: none;
+  transition: color .35s, gap .25s;
 }
-.svc-link:hover { gap: 8px; }
-.svc-link span { display: inline-block; transition: transform .2s; }
-.svc-link:hover span { transform: translateX(3px); }
+.service-card.is-active .svc-link { color: #f4b400; gap: 8px; }
+.svc-link span { display: inline-block; transition: transform .25s; }
+.service-card.is-active .svc-link span { transform: translateX(3px); }
+
+/* ── Floating popup ── */
+.services-popup {
+  position: absolute; top: 0; left: 0; z-index: 6; /* top set to the strip's base in JS */
+  width: 306px; margin-top: 18px;
+  pointer-events: none;
+  transform: translateX(var(--px, 0px));
+  transition: transform .55s cubic-bezier(.22,.68,0,1);
+}
+.services-popup::after { /* pointer toward the hovered card */
+  content: '';
+  position: absolute; top: -6px; left: var(--ax, 50%); margin-left: -7px;
+  width: 14px; height: 14px; border-radius: 3px;
+  background: #0a1220;
+  border-left: 1px solid rgba(244,180,0,.18);
+  border-top: 1px solid rgba(244,180,0,.18);
+  transform: rotate(45deg) scale(.6); opacity: 0;
+  transition: opacity .3s, left .55s cubic-bezier(.22,.68,0,1),
+              transform .4s cubic-bezier(.22,.68,0,1.3);
+}
+.services-popup.is-open::after { opacity: 1; transform: rotate(45deg) scale(1); }
+/* bottom-row cards flip the popup above, so the pointer flips with it */
+.services-popup.is-above::after {
+  top: auto; bottom: -6px;
+  border: 0;
+  border-right: 1px solid rgba(244,180,0,.18);
+  border-bottom: 1px solid rgba(244,180,0,.18);
+}
+.services-popup-card {
+  border-radius: 18px; overflow: hidden;
+  background: #0a1220;
+  box-shadow: 0 30px 64px rgba(10,18,37,.34), 0 0 0 1px rgba(244,180,0,.18);
+  opacity: 0; transform: translateY(18px) scale(.93);
+  transform-origin: 50% 0;
+  transition: opacity .3s ease, transform .5s cubic-bezier(.22,.68,0,1.25);
+}
+.services-popup.is-above .services-popup-card {
+  transform: translateY(-18px) scale(.93);
+  transform-origin: 50% 100%;
+}
+.services-popup.is-open .services-popup-card,
+.services-popup.is-open.is-above .services-popup-card { opacity: 1; transform: none; }
+.popup-img {
+  display: block; width: 100%; height: 170px;
+  object-fit: cover; object-position: top center;
+  background: #0a1220;
+}
+.popup-caption {
+  padding: 13px 17px 15px;
+  border-top: 1px solid rgba(255,255,255,.07);
+  background: linear-gradient(180deg, rgba(244,180,0,.07), transparent);
+}
+.popup-caption-title {
+  color: #fff; font-size: 13.5px; font-weight: 700;
+  letter-spacing: 1.4px; text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-popup, .services-popup-card, .services-popup::after,
+  .service-card, .service-card::after { transition-duration: .01ms; }
+}
 
 /* ===== TECH STACK ===== */
 .tech-stack {
@@ -593,9 +650,11 @@ body {
   letter-spacing: -0.2px; white-space: nowrap; line-height: 1;
 }
 .tech-name-lower { text-transform: lowercase; font-weight: 600; }
-/* The SVG mark supplies Anaplan's leading "A" */
-.tech-name-anaplan { margin-left: -3px; font-weight: 800; letter-spacing: -0.6px; }
-.tech-name-pigment { font-weight: 800; letter-spacing: 1.2px; font-size: 19px; }
+/* The SVG mark supplies Anaplan's leading "A", so close the flex gap
+   far enough that the lockup reads as the single word "Anaplan" */
+.tech-name-anaplan { margin-left: -9px; font-weight: 800; letter-spacing: -0.6px; }
+/* Pigment sets its wordmark in title case, not caps */
+.tech-name-pigment { font-weight: 700; letter-spacing: -0.3px; }
 .tech-name-azure {
   display: flex; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1;
 }
@@ -610,12 +669,17 @@ body {
   .tech-name-azure .tech-name-lg { font-size: 16.5px; }
   .tech-name-azure .tech-name-sm { font-size: 11.5px; }
 }
-@media (max-width: 700px) {
-  /* stretch so the taller Azure lockup doesn't offset its row-mate */
-  .tech-strip { gap: 4px 0; align-items: stretch; }
-  .tech-logo { padding: 12px 16px; flex: 0 0 50%; box-sizing: border-box; min-height: 62px; }
-  /* Rules read as stray marks once the strip wraps */
+/* Below desktop the six lockups can't share one row — lay them out in even
+   rows instead of letting flex wrap them 5 + 1 */
+@media (max-width: 1024px) {
+  .tech-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 0; }
+  .tech-logo { padding: 14px 12px; min-height: 62px; }
+  /* Rules read as stray marks once the strip is gridded */
   .tech-logo + .tech-logo::before { display: none; }
+}
+@media (max-width: 560px) {
+  .tech-strip { grid-template-columns: repeat(2, 1fr); }
+  .tech-logo { padding: 12px 8px; gap: 8px; }
   .tech-name { font-size: 16px; }
 }
 
@@ -888,7 +952,14 @@ body {
 @media (max-width: 1024px) {
   .hero h1 { font-size: 60px; letter-spacing: -1.5px; }
   .cs-header h2, .services h2 { font-size: 34px; }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Services: no hover on touch, so drop the popup and keep the cards open */
+  .services-showcase { max-width: 760px; }
+  .services-popup { display: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .service-card { padding: 19px 18px 18px; transform: none; }
+  .service-card.is-active { transform: none; }
+  .svc-icon { width: 36px; height: 36px; margin-bottom: 11px; }
+  .service-card h3 { font-size: 15px; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-links-grid { grid-template-columns: repeat(4, 1fr); }
   .menu-btn { display: flex; }
@@ -908,7 +979,6 @@ body {
   .logo-tagline { font-size: 11px; }
   .hero-scroll-hint { display: none; }
   .services { padding: 72px 0; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
   .case-studies { padding: 72px 0; }
   .cs-grid { grid-template-columns: 1fr; }
   .why-contact { padding: 72px 0; }
