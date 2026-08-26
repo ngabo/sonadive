@@ -48,14 +48,14 @@ body {
   display: flex; align-items: center; gap: 28px;
   padding-top: 13px; padding-bottom: 13px;
 }
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.logo { display: flex; align-items: center; gap: 6px; text-decoration: none; flex-shrink: 0; }
 .logo-icon {
-  height: 36px; width: 36px; display: block;
+  height: 29px; width: auto; display: block;
   transition: transform 0.3s;
 }
 .logo:hover .logo-icon { transform: rotate(-5deg) scale(1.05); }
 .logo-text { display: flex; flex-direction: column; gap: 3px; }
-.logo-name { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 2px; line-height: 1; }
+.logo-name { color: #fff; font-weight: 800; font-size: 23px; letter-spacing: 1.3px; line-height: 1; }
 .logo-tagline { color: #8a9ab5; font-size: 10px; letter-spacing: 0.4px; line-height: 1; }
 /* Clear separation between the brand lockup and the menu */
 .nav-links { display: flex; align-items: center; gap: 24px; margin-left: auto; padding-left: 40px; }
@@ -974,8 +974,8 @@ body {
   .hero h1 { font-size: 44px; letter-spacing: -1px; }
   .hero-sub { font-size: 16px; margin-bottom: 32px; }
   .hero-cta .btn-primary, .hero-cta .btn-outline { padding: 14px 24px; font-size: 14px; }
-  .logo-icon { height: 42px; width: 42px; }
-  .logo-name { font-size: 18px; letter-spacing: 2px; }
+  .logo-icon { height: 25px; width: auto; }
+  .logo-name { font-size: 18px; letter-spacing: 1px; }
   .logo-tagline { font-size: 11px; }
   .hero-scroll-hint { display: none; }
   .services { padding: 72px 0; }

@@ -22,8 +22,8 @@
   const MAP = {
 
     // ── Shared: Navbar ──────────────────────────────────────────
-    '.logo-tagline': {h:['Dive Deeper. <span class="gold">Deliver Value.</span>',
-                         'Plongez Plus Profond. <span class="gold">Livrez Plus de Valeur.</span>']},
+    '.logo-tagline': {h:['Dive Deeper.<br><span class="gold">Deliver Value.</span>',
+                         'Plongez Plus Profond.<br><span class="gold">Livrez Plus de Valeur.</span>']},
     '.nav-links > a[href="/"]':            ['Home', 'Accueil'],
     '.nav-links > a[href="about.html"]':   ['About Us', 'À propos'],
     '.nav-drop-trigger':                   {h:['Solutions <svg class="nav-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
