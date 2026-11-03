@@ -1,342 +1,370 @@
-// ===== SONADIVE — Language Switcher (EN / FR) =====
+// ===== SONADIVE: Language switcher (EN / FR) =====
+// English lives in the markup; FR holds the French by key.
 (function () {
   'use strict';
 
   const KEY = 'sonadive_lang';
-  let lang = localStorage.getItem(KEY) || 'en';
+  const FR = {
+  "cta.book": "Réserver une consultation →",
+  "svc.more": "En savoir plus →",
+  "h.s0.h": "Déploiement EPM",
+  "h.s0.p": "Implémentations Pigment &amp; Anaplan",
+  "h.s1.h": "Ingénierie des données",
+  "h.s1.p": "Snowflake, Databricks, Azure &amp; planification",
+  "h.s2.h": "Intelligence d'affaires",
+  "h.s2.p": "Power BI &amp; analytique d'entreprise",
+  "h.s3.h": "Stratégie &amp; Optimisation EPM",
+  "h.s3.p": "Revues de modèles, feuilles de route &amp; optimisation",
+  "h.s4.h": "Automatisation des processus",
+  "h.s4.p": "Ingestion de données &amp; flux financiers",
+  "h.s5.h": "Support EPM à temps partagé",
+  "h.s5.p": "Maintenance continue &amp; évolutions des modèles",
+  "nav.skip": "Aller au contenu",
+  "nav.home": "Accueil",
+  "nav.about": "À propos",
+  "nav.sol": "Solutions",
+  "nav.m.epm": "EPM",
+  "nav.m.da": "Analytique de données",
+  "nav.m.bi": "Intelligence d'affaires",
+  "nav.m.de": "Ingénierie des données",
+  "nav.m.ai": "IA &amp; Automatisation",
+  "nav.m.gov": "Stratégie &amp; Gouvernance des données",
+  "nav.ind": "Secteurs",
+  "nav.cases": "Études de cas",
+  "nav.ins": "Perspectives",
+  "nav.con": "Contact",
+  "hero.l1": "EPM &amp; Pipelines de Données.",
+  "hero.l2": "Évoluez Plus Vite.",
+  "hero.eye": "EPM &amp; ARCHITECTURE DE DONNÉES MODERNE",
+  "hero.sub": "Nous aidons les équipes Finance et Opérations à déployer Pigment, Anaplan et des backends de données cloud sans les délais de plusieurs mois des cabinets de conseil.",
+  "hero.c1": "Réserver une consultation →",
+  "hero.c2": "Voir l'écosystème technique →",
+  "h.svc.l": "NOS SERVICES",
+  "h.svc.h": "Solutions Data &amp; EPM Complètes",
+  "h.svc.p": "De l'architecture cloud au déploiement rapide de modèles, nous construisons des plateformes scalables pour décider vite.",
+  "h.tech": "NOTRE ÉCOSYSTÈME TECHNIQUE INTÉGRÉ",
+  "h.why.l": "POURQUOI CHOISIR SONADIVE",
+  "h.why.h": "Pourquoi Partenaires &amp; Entreprises<br>Construisent avec Nous",
+  "h.w0.h": "Experts certifiés",
+  "h.w0.p": "Des Solution Architects Pigment et Anaplan seniors certifiés affectés directement à votre projet.",
+  "h.w1.h": "Livraison à haute vélocité",
+  "h.w1.p": "Des déploiements agiles de 4 à 8 semaines au lieu des délais interminables des cabinets.",
+  "h.hold": "Maintenir",
+  "h.w2.h": "Intégration full-stack",
+  "h.w2.p": "Nous concevons à la fois le pipeline de données backend et le modèle EPM front-end.",
+  "h.w3.h": "Modèles de support flexibles",
+  "h.w3.p": "Du build complet au support admin à temps partagé et à la livraison en marque blanche.",
+  "h.con.l": "TRAVAILLONS ENSEMBLE",
+  "h.con.h": "Prendre Contact",
+  "h.con.p": "Besoin d'un expert Pigment certifié ou d'un architecte de pipelines de données ? Parlons-en.",
+  "form.name": "Votre Nom",
+  "form.email": "Votre Email",
+  "form.co": "Nom de l'Entreprise",
+  "form.ph": "Numéro de Téléphone",
+  "h.msg": "Votre Message",
+  "form.send": "Envoyer le message →",
+  "h.ok": "Message envoyé ! Nous vous contacterons bientôt.",
+  "h.err": "Une erreur s'est produite. Veuillez réessayer ou nous envoyer un email directement.",
+  "foot.i1": "Commerce",
+  "foot.i2": "Services financiers",
+  "foot.i3": "Santé",
+  "foot.i4": "Industrie",
+  "foot.i5": "Technologie",
+  "foot.desc": "Conseil en analytique de données qui transforme la complexité en clarté — aidant les entreprises à croître grâce à la puissance des données.",
+  "foot.h1": "Entreprise",
+  "foot.h2": "Services",
+  "foot.h4": "Nous contacter",
+  "foot.ph": "Votre email",
+  "foot.hint": "Recevez des insights dans votre boîte mail.",
+  "foot.c": "© 2025 Sonadive Analytics. Tous droits réservés.",
+  "foot.p": "Politique de confidentialité",
+  "foot.t": "Conditions d'utilisation",
+  "a.v0.h": "L'Intégrité Avant Tout",
+  "a.v0.p": "Nous donnons des évaluations honnêtes, même quand ce n'est pas ce que les clients veulent entendre. La confiance est le fondement de chaque engagement.",
+  "a.v1.h": "Précision des Données",
+  "a.v1.p": "Nous sommes obsédés par l'exactitude. Chaque insight est validé, chaque modèle testé, chaque recommandation appuyée par des preuves.",
+  "a.v2.h": "Partenariat Client",
+  "a.v2.p": "Nous ne sommes pas des fournisseurs — nous sommes des partenaires. Nous nous intégrons dans vos équipes et nous soucions de vos résultats autant que vous.",
+  "a.v3.h": "Impact Mesurable",
+  "a.v3.p": "Nous définissons le succès en chiffres — revenus générés, coûts réduits, décisions accélérées. L'analytique doit produire des résultats concrets.",
+  "a.hl0": "Cycles de mise en œuvre Pigment et Anaplan rapides en 4 à 8 semaines",
+  "a.hl1": "Intégration de bout en bout : des données brutes du warehouse aux tableaux de bord de direction",
+  "a.hl2": "Experts Pigment certifiés seniors et ingénieurs de données cloud",
+  "a.c": "À propos",
+  "a.e": "Notre Histoire",
+  "a.t": "Nous Plongeons Plus Profond<br><span class=\"tone\">Pour Vous Faire Avancer Plus Vite</span>",
+  "a.s": "Sonadive a été fondé avec une mission claire : éliminer les cycles de mise en œuvre lents et surdimensionnés des cabinets de conseil traditionnels. Nous plongeons au cœur de l'architecture de données et déployons des modèles EPM à haute vélocité dans Pigment et Anaplan.",
+  "a.w.l": "QUI NOUS SOMMES",
+  "a.w.h": "Un Partenaire de Déploiement Agile pour l’EPM et le Cloud Data",
+  "a.w.p": "Des équipes finance du mid-market aux entreprises en forte croissance, nous combinons des pipelines de données cloud modernes (Snowflake, Databricks, Azure) avec un déploiement rapide de modèles Pigment et Anaplan.",
+  "a.q": "\"Données profondes.<br>Impact réel.\"",
+  "a.m.h": "Notre Mission",
+  "a.m.p": "Démocratiser l'analytique de données pour les entreprises de toutes tailles — donner à chaque organisation les outils, les insights et les stratégies dont elle a besoin pour être compétitive dans un monde orienté données. Nous pensons que l'analytique doit être accessible, actionnable et impactante.",
+  "a.m.b": "Travaillez avec nous →",
+  "a.v.l": "NOS VALEURS",
+  "a.v.h": "Ce Qui Guide Tout Ce Que Nous Faisons",
+  "a.v.p": "Nos valeurs ne sont pas affichées sur un mur — elles sont intégrées dans chaque analyse, recommandation et relation client.",
+  "a.cta.b2": "Explorer nos services",
+  "a.cta.l": "COMMENÇONS",
+  "a.cta.h": "Prêt à transformer vos données ?",
+  "a.cta.p": "Parlons de vos défis data et de comment Sonadive peut vous aider.",
+  "a.cta.b": "Réserver une consultation gratuite →",
+  "s.get": "Commencer →",
+  "s.epm.f0": "Architecture de planification connectée (Anaplan, Pigment)",
+  "s.epm.f1": "Modélisation financière, opérationnelle et des effectifs",
+  "s.epm.f2": "Budgétisation par inducteurs et prévisions glissantes",
+  "s.epm.f3": "Migration et consolidation des systèmes existants",
+  "s.epm.h": "EPM",
+  "s.epm.p": "Transformez la planification financière, la budgétisation et la modélisation de scénarios en prévisions continues et en temps réel.",
+  "s.analytics.f0": "Tableaux de bord exécutifs &amp; opérationnels (Power BI, Tableau, Looker)",
+  "s.analytics.f1": "Suivi automatisé des KPI, reporting et alertes en temps réel",
+  "s.analytics.f2": "Portails d’analytique en libre-service pour les équipes métier",
+  "s.analytics.f3": "Data storytelling, UI/UX et design de visualisation",
+  "s.analytics.h": "Analytique de données &amp; Intelligence d'affaires",
+  "s.analytics.p": "Transformez des jeux de données complexes en tableaux de bord interactifs qui offrent aux décideurs une clarté opérationnelle immédiate.",
+  "s.engineering.f0": "Conception et orchestration de pipelines ETL/ELT",
+  "s.engineering.f1": "Architecture d’entrepôt de données cloud (Snowflake, Databricks, BigQuery)",
+  "s.engineering.f2": "Solutions data lakehouse &amp; streaming en temps réel",
+  "s.engineering.f3": "Intégrations API et optimisation de bases de données",
+  "s.engineering.h": "Ingénierie des données &amp; Infrastructure",
+  "s.engineering.p": "Construisez une infrastructure de données scalable et à haut débit pour que les données de votre organisation soient toujours fiables.",
+  "s.ai.f0": "Modélisation prédictive &amp; pipelines de machine learning",
+  "s.ai.f1": "Intégrations LLM, RAG et analyse de texte NLP",
+  "s.ai.f2": "Automatisation des flux &amp; traitement de documents",
+  "s.ai.f3": "Moteurs de recommandation et de scoring IA sur mesure",
+  "s.ai.h": "IA &amp; Automatisation des processus",
+  "s.ai.p": "Déployez des modèles de machine learning sur mesure et de l'automatisation intelligente pour éliminer les tâches manuelles.",
+  "s.strategy.f0": "Stratégie data et feuille de route technique",
+  "s.strategy.f1": "Cadres de gouvernance, sécurité et politiques de conformité",
+  "s.strategy.f2": "Suivi de la qualité et catalogage des données",
+  "s.strategy.f3": "Accompagnement des équipes et formation à la data",
+  "s.strategy.h": "Stratégie &amp; Gouvernance des données",
+  "s.strategy.p": "Instaurez une culture data mature avec une gouvernance solide, la sécurité et des feuilles de route d'exécution claires.",
+  "s.managed.f0": "Implémentation et déploiement de plateforme de bout en bout",
+  "s.managed.f1": "Administration et support de plateforme dédiés",
+  "s.managed.f2": "Optimisation des performances et revues d’audit",
+  "s.managed.f3": "Développement de connecteurs et d’API sur mesure",
+  "s.managed.h": "Implémentation &amp; Services gérés",
+  "s.managed.p": "Un accompagnement sur tout le cycle de vie — de l'architecture système initiale à la gestion continue de la plateforme.",
+  "s.p0.h": "Découvrir",
+  "s.p0.p": "Auditez votre paysage actuel de données et de planification, clarifiez les objectifs métier et identifiez les opportunités à fort impact.",
+  "s.p1.h": "Concevoir",
+  "s.p1.p": "Concevez la bonne solution — définition des pipelines de données, des modèles EPM, des KPI et de l’alignement de la stack technique.",
+  "s.p2.h": "Construire",
+  "s.p2.p": "Développez, testez et déployez en sprints agiles avec un retour continu et une assurance qualité rigoureuse.",
+  "s.p3.h": "Transférer",
+  "s.p3.p": "Transférez des systèmes entièrement documentés avec une formation sur mesure, un support continu et une gouvernance de plateforme.",
+  "s.c": "Services",
+  "s.e": "Ce Que Nous Faisons",
+  "s.t": "Solutions Data &amp; EPM<br><span class=\"tone\">de Bout en Bout</span>",
+  "s.s": "De l'architecture de modèles financiers aux pipelines de données de production et à l'automatisation par IA — nous couvrons chaque couche de la stack data moderne.",
+  "s.l": "NOS SERVICES",
+  "s.h": "Six Façons de Vous Aider à Évoluer avec les Données",
+  "s.p": "Conçu pour aligner la finance, les opérations et l'ingénierie — en livrant une valeur commerciale mesurable, pas seulement du code.",
+  "s.pr.l": "NOTRE PROCESSUS",
+  "s.pr.h": "Comment Nous Travaillons",
+  "s.pr.p": "Un processus structuré et collaboratif, conçu pour livrer de la valeur rapidement et de façon itérative.",
+  "s.cta.l": "PRÊT À COMMENCER",
+  "s.cta.h": "Vous ne savez pas quelle solution convient à votre architecture ?",
+  "s.cta.p": "Discutons de votre configuration actuelle, de vos besoins de plateforme et de votre stratégie data lors d'un bref appel de découverte.",
+  "s.cta.b": "Réserver une consultation gratuite →",
+  "i.retail.t0": "Segmentation Client",
+  "i.retail.t1": "Prévision de la Demande",
+  "i.retail.t2": "Prédiction du Churn",
+  "i.retail.t3": "Analyse du Panier",
+  "i.retail.h": "Commerce &amp; E-Commerce",
+  "i.retail.p": "Stimulez la croissance du chiffre d'affaires grâce à l'intelligence client, la prévision de la demande, l'optimisation des stocks et l'analytique marketing personnalisée.",
+  "i.financial.t0": "Risque de Crédit",
+  "i.financial.t1": "Détection de Fraude",
+  "i.financial.t2": "Analytique de Portefeuille",
+  "i.financial.t3": "Reporting Réglementaire",
+  "i.financial.h": "Services Financiers",
+  "i.financial.p": "Améliorez les modèles de risque, accélérez le reporting réglementaire, détectez la fraude en temps réel et améliorez l'analytique des portefeuilles clients.",
+  "i.healthcare.t0": "Analytique Patient",
+  "i.healthcare.t1": "Optimisation des Ressources",
+  "i.healthcare.t2": "Intelligence Clinique",
+  "i.healthcare.h": "Santé",
+  "i.healthcare.p": "Soutenez les décisions cliniques, optimisez l'allocation des ressources, améliorez les résultats patients et activez l'analytique de santé populationnelle.",
+  "i.manufacturing.t0": "Maintenance Prédictive",
+  "i.manufacturing.t1": "Analytique TRS",
+  "i.manufacturing.t2": "Chaîne d'Approvisionnement",
+  "i.manufacturing.h": "Industrie &amp; Production",
+  "i.manufacturing.p": "Réduisez les temps d'arrêt, améliorez les rendements et optimisez les chaînes d'approvisionnement grâce à l'analytique opérationnelle en temps réel.",
+  "i.technology.t0": "Analytique Produit",
+  "i.technology.t1": "Optimisation des Tunnels",
+  "i.technology.t2": "Modélisation du Churn",
+  "i.technology.h": "Technologie &amp; SaaS",
+  "i.technology.p": "Transformez les données d'utilisation en intelligence de croissance — optimisez les tunnels, réduisez le churn et construisez une feuille de route produit basée sur les données.",
+  "i.realestate.t0": "Analytique de Marché",
+  "i.realestate.t1": "Vision Portefeuille",
+  "i.realestate.t2": "Modèles d'Évaluation",
+  "i.realestate.h": "Immobilier &amp; Patrimoine",
+  "i.realestate.p": "Évaluez les biens avec précision, identifiez les opportunités d'investissement et optimisez la performance de portefeuille grâce à l'intelligence géolocalisée.",
+  "i.c": "Secteurs",
+  "i.e": "Où Nous Intervenons",
+  "i.t": "Expertise Approfondie dans<br><span class=\"tone\">Chaque Secteur</span>",
+  "i.s": "Nous ne comprenons pas seulement les données — nous comprenons votre secteur. Nos consultants apportent une connaissance spécifique à chaque engagement.",
+  "i.l": "SECTEURS QUE NOUS SERVONS",
+  "i.h": "Solutions Data par Secteur",
+  "i.p": "Chaque secteur a ses défis data uniques. Nous apportons l'expertise adéquate pour les résoudre.",
+  "i.cta.l": "VOTRE SECTEUR",
+  "i.cta.h": "Votre secteur n'est pas listé ?",
+  "i.cta.p": "Nous intervenons dans de nombreux secteurs. Discutons de la façon dont notre approche s'applique à votre contexte spécifique.",
+  "i.cta.b": "Démarrer une conversation →",
+  "c.0.r0": "Hausse des ventes globales dans les deux trimestres suivant la mise en œuvre",
+  "c.0.r1": "Amélioration des taux de conversion des campagnes email",
+  "c.0.r2": "Retour sur l'investissement analytique en 6 mois",
+  "c.0.t": "Commerce",
+  "c.0.h": "Stimuler les ventes grâce à la connaissance client",
+  "c.0.p": "Une chaîne de distribution régionale voyait ses achats récurrents baisser et ne parvenait pas à identifier les segments clients créant le plus de valeur. Nous avons construit un modèle avancé de segmentation client combinant fréquence d'achat, taille du panier et étape du cycle de vie.",
+  "c.0.s": "Services utilisés : Analytique de données, Intelligence d’affaires, Segmentation client",
+  "c.1.r0": "Baisse des taux de défaut sur le portefeuille de prêts à la consommation",
+  "c.1.r1": "Amélioration de la précision du modèle par rapport à l'ancien système de scoring",
+  "c.1.t": "Services Financiers",
+  "c.1.h": "Améliorer l’évaluation du risque de crédit",
+  "c.1.p": "Un organisme de crédit faisait face à une hausse des défauts et à un modèle de scoring dépassé reposant sur peu de variables. Nous avons reconstruit son cadre d'évaluation du risque avec le machine learning, en intégrant plus de 80 variables comportementales et transactionnelles.",
+  "c.1.s": "Services utilisés : IA &amp; Automatisation, Analytique financière, Ingénierie des données",
+  "c.2.r0": "Amélioration du taux de rendement synthétique (TRS)",
+  "c.2.r1": "Réduction des arrêts imprévus",
+  "c.2.r2": "Baisse des coûts de maintenance sur un an",
+  "c.2.t": "Industrie",
+  "c.2.h": "Optimiser les opérations grâce aux données en temps réel",
+  "c.2.p": "Un industriel de taille moyenne subissait des arrêts imprévus qui lui coûtaient de nombreuses heures de production. Nous avons déployé une plateforme d'analytique opérationnelle en temps réel et un modèle de maintenance prédictive sur ses principales lignes de production.",
+  "c.2.s": "Services utilisés : Ingénierie des données, IA &amp; Automatisation, Intelligence d’affaires",
+  "c.3.r0": "Baisse du taux de churn mensuel en 90 jours",
+  "c.3.r1": "Précision du modèle pour identifier les comptes à risque 30 jours à l’avance",
+  "c.3.t": "Technologie / SaaS",
+  "c.3.h": "Réduire le churn grâce à l’intelligence prédictive",
+  "c.3.p": "Un éditeur SaaS B2B perdait 8 % de ses clients chaque mois sans aucun système d'alerte précoce. Nous avons construit un modèle de prédiction du churn à partir des signaux d'usage produit, des tickets de support et des indicateurs d'engagement, puis l'avons intégré à son CRM.",
+  "c.3.s": "Services utilisés : IA &amp; Automatisation, Analytique produit, Ingénierie des données",
+  "c.4.r0": "Réduction du temps d’attente moyen aux urgences",
+  "c.4.r1": "Amélioration du taux d’utilisation des lits dans les services",
+  "c.4.t": "Santé",
+  "c.4.h": "Améliorer le parcours patient et l’allocation des ressources",
+  "c.4.p": "Un réseau hospitalier régional faisait face à de longues attentes et à une allocation inefficace des ressources. Nous avons analysé les admissions, les plannings du personnel et l'occupation des lits pour construire un modèle de planification des capacités et de prévision de la demande.",
+  "c.4.s": "Services utilisés : Analytique de données, Modélisation prédictive, Intelligence d’affaires",
+  "c.5.r0": "Évaluation des dossiers plus rapide que le processus manuel",
+  "c.5.r1": "Rendement moyen supérieur sur les acquisitions la première année",
+  "c.5.t": "Immobilier",
+  "c.5.h": "Une stratégie d’investissement immobilier fondée sur les données",
+  "c.5.p": "Une société d'investissement immobilier n'avait pas de méthode systématique pour évaluer ses acquisitions. Nous avons construit une plateforme d'intelligence de marché qui agrège les prix, les rendements locatifs, les données démographiques et d'urbanisme pour noter automatiquement les opportunités.",
+  "c.5.s": "Services utilisés : Stratégie data, Analytique de marché, Développement de tableaux de bord",
+  "c.c": "Études de cas",
+  "c.e": "Résultats Prouvés",
+  "c.ti": "Vrais Défis.<br><span class=\"tone\">Vrais Résultats.</span>",
+  "c.su": "Découvrez comment nous avons aidé des organisations de tous secteurs à libérer la valeur de leurs données et à obtenir des résultats mesurables.",
+  "c.l": "RÉSULTATS CLIENTS",
+  "c.h": "Du Défi à l’Impact",
+  "c.p": "Chaque engagement commence par un problème. Voici comment nous les avons résolus.",
+  "c.cta.l": "VOTRE HISTOIRE",
+  "c.cta.h": "Prêt à écrire votre histoire de réussite ?",
+  "c.cta.p": "Parlons de vos défis data et des résultats que nous pouvons atteindre ensemble.",
+  "c.cta.b": "Réserver une consultation gratuite →",
+  "n.more": "Lire la suite →",
+  "n.0.c": "Analytique de données",
+  "n.0.d": "Mai 2026",
+  "n.0.h": "5 KPI que chaque enseigne devrait suivre en 2026",
+  "n.0.p": "Au-delà du chiffre d’affaires et de la fréquentation — les indicateurs clients et opérationnels qui prédisent vraiment la performance.",
+  "n.1.c": "IA &amp; Automatisation",
+  "n.1.d": "Mai 2026",
+  "n.1.h": "Comment construire un business case pour l’IA dans votre organisation",
+  "n.1.p": "Un cadre pratique pour évaluer, prioriser et présenter vos initiatives IA à des décideurs attentifs au ROI.",
+  "n.2.c": "Gouvernance des données",
+  "n.2.d": "Avril 2026",
+  "n.2.h": "La gouvernance des données sans la bureaucratie : un guide pratique",
+  "n.2.p": "Comment mettre en place des cadres de gouvernance réellement adoptés — sans ralentir votre équipe analytique.",
+  "n.3.c": "Intelligence d'affaires",
+  "n.3.d": "Avril 2026",
+  "n.3.h": "Pourquoi vos tableaux de bord ne sont pas utilisés (et comment y remédier)",
+  "n.3.p": "La plupart des projets BI échouent non pas à cause de mauvaises données, mais d’un mauvais design. Voici comment créer des tableaux de bord réellement utilisés.",
+  "n.4.c": "Analytique financière",
+  "n.4.d": "Mars 2026",
+  "n.4.h": "Des tableurs aux plateformes FP&amp;A : franchir le pas",
+  "n.4.p": "Quand Excel ne suffit plus — comment évaluer, choisir et déployer une plateforme moderne de planification financière.",
+  "n.5.c": "Ingénierie des données",
+  "n.5.d": "Mars 2026",
+  "n.5.h": "Snowflake, BigQuery ou Redshift : choisir le bon entrepôt en 2026",
+  "n.5.p": "Une comparaison impartiale des trois principaux entrepôts de données cloud — coût, performance et adéquation à l’écosystème.",
+  "n.c": "Perspectives",
+  "n.e": "Centre de Connaissances",
+  "n.t": "Analytique de Données<br><span class=\"tone\">Perspectives &amp; Ressources</span>",
+  "n.s": "Perspectives pratiques sur la stratégie data, l'analytique, l'IA et l'avenir de l'intelligence d'affaires — de notre équipe à la vôtre.",
+  "n.f.l": "Article Vedette",
+  "n.f.h": "La stack data moderne en 2026 : ce que tout dirigeant doit savoir",
+  "n.f.p": "Les entrepôts cloud, les architectures lakehouse et les outils natifs IA ont profondément changé la façon dont les entreprises bâtissent leurs capacités analytiques. Voici notre guide pratique pour s'y retrouver.",
+  "n.f.d": "Juin 2026",
+  "n.f.r": "8 min de lecture",
+  "n.f.b": "Lire l'article →",
+  "n.l": "DERNIERS ARTICLES",
+  "n.h": "De Notre Équipe",
+  "n.p": "Insights pratiques et perspectives d'experts sur les données, l'analytique et l'IA.",
+  "n.nl.l": "RESTEZ INFORMÉ",
+  "n.nl.h": "Recevez des insights dans votre boîte mail",
+  "n.nl.p": "Des perspectives mensuelles sur l’analytique, les tendances IA et des stratégies pratiques — sans spam, désinscription à tout moment.",
+  "n.nl.ph": "Votre adresse email",
+  "n.nl.b": "S'abonner →",
+  "k.o0": "EPM",
+  "k.o1": "Analytique de données",
+  "k.o2": "Intelligence d'affaires",
+  "k.o3": "Ingénierie des données",
+  "k.o4": "IA &amp; Automatisation",
+  "k.o5": "Stratégie &amp; Gouvernance des données",
+  "k.o6": "Pas encore sûr",
+  "k.c": "Contact",
+  "k.e": "Entrez en Contact",
+  "k.t": "Démarrons une<br><span class=\"tone\">Conversation</span>",
+  "k.s": "Vous avez un défi data ou un projet en tête ? Partagez-le avec nous — nous vous répondrons dans les 24 heures avec des conseils honnêtes et pratiques.",
+  "k.h": "Comment Nous Joindre",
+  "k.r1": "Email",
+  "k.r1a": "Envoyez-nous un message",
+  "k.r1b": "Nous répondons dans les 24 heures",
+  "k.r2": "Appel de Découverte",
+  "k.r2a": "Réservez un appel gratuit de 30 minutes",
+  "k.r2b": "Aucun engagement requis",
+  "k.r3": "Délai de Réponse",
+  "k.r3a": "Dans les 24 heures les jours ouvrés",
+  "k.r4a": "Connectez-vous avec Sonadive",
+  "k.n": "La Suite",
+  "k.n1": "Nous examinons votre message et comprenons votre défi",
+  "k.n2": "Nous répondons dans les 24 heures avec de premières pistes et les prochaines étapes",
+  "k.n3": "Nous planifions un appel de découverte gratuit pour explorer l’opportunité",
+  "k.f.h": "Envoyez-nous un Message",
+  "k.f.p": "Parlez-nous de votre projet et nous vous répondrons rapidement.",
+  "k.sel": "Quel service vous intéresse ?",
+  "k.msg": "Parlez-nous de votre défi data ou de votre projet...",
+  "k.ok": "Message envoyé ! Nous vous contacterons dans les 24 heures.",
+  "k.err": "Une erreur s'est produite. Veuillez réessayer ou utiliser le formulaire ci-dessus."
+};
 
-  // Detect current page
-  const p = location.pathname;
-  const page = p.includes('about') ? 'about'
-    : p.includes('services') ? 'services'
-    : p.includes('industries') ? 'industries'
-    : p.includes('case-studies') ? 'casestudies'
-    : p.includes('insights') ? 'insights'
-    : p.includes('contact') ? 'contact'
-    : 'home';
-
-  // ── Translation map ─────────────────────────────────────────────
-  // Format: selector → [en, fr]   (text)
-  //         selector → {h:[en,fr]} (innerHTML — preserves child tags)
-  //         selector → {ph:[en,fr]}(placeholder attribute)
-  const MAP = {
-
-    // ── Shared: Navbar ──────────────────────────────────────────
-    '.logo-tagline': {h:['Dive Deeper.<br><span class="gold">Deliver Value.</span>',
-                         'Plongez Plus Profond.<br><span class="gold">Livrez Plus de Valeur.</span>']},
-    '.nav-links > a[href="/"]':            ['Home', 'Accueil'],
-    '.nav-links > a[href="about.html"]':   ['About Us', 'À propos'],
-    '.nav-drop-trigger':                   {h:['Solutions <svg class="nav-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-                                                'Solutions <svg class="nav-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>']},
-    '.nav-links > a[href="industries.html"]':['Industries', 'Secteurs'],
-    '.nav-links > a[href="case-studies.html"]':['Case Studies', 'Études de cas'],
-    '.nav-links > a[href="insights.html"]':['Insights', 'Perspectives'],
-    '.nav-links > a[href="contact.html"]:not(.btn-primary)': ['Contact', 'Contact'],
-    '.btn-primary.nav-cta': ['Book a Consultation →', 'Réserver une consultation →'],
-    '.mobile-menu-links a[href="/"]':              ['Home', 'Accueil'],
-    '.mobile-menu-links a[href="about.html"]':     ['About Us', 'À propos'],
-    '.mobile-menu-links a[href="services.html"]':  ['Solutions', 'Solutions'],
-    '.mobile-menu-links a[href="industries.html"]':['Industries', 'Secteurs'],
-    '.mobile-menu-links a[href="case-studies.html"]':['Case Studies', 'Études de cas'],
-    '.mobile-menu-links a[href="insights.html"]':  ['Insights', 'Perspectives'],
-    '.mobile-menu-links a[href="contact.html"]':   ['Contact', 'Contact'],
-    '.mobile-cta': ['Book a Consultation →', 'Réserver une consultation →'],
-
-    // ── Shared: Footer ──────────────────────────────────────────
-    '.footer-desc': ['Data analytics consulting that transforms complexity into clarity — helping businesses grow through the power of data.',
-      "Conseil en analytique de données qui transforme la complexité en clarté — aidant les entreprises à croître grâce à la puissance des données."],
-    '.footer-col:nth-child(1) h5': ['Company', 'Entreprise'],
-    '.footer-col:nth-child(2) h5': ['Services', 'Services'],
-    '.footer-col:nth-child(3) h5': ['Industries', 'Secteurs'],
-    '.footer-col:nth-child(4) h5': ['Get in Touch', 'Nous contacter'],
-    '.footer-col:nth-child(1) a[href="/"]':              ['Home', 'Accueil'],
-    '.footer-col:nth-child(1) a[href="about.html"]':     ['About Us', 'À propos'],
-    '.footer-col:nth-child(1) a[href="case-studies.html"]':['Case Studies', 'Études de cas'],
-    '.footer-col:nth-child(1) a[href="contact.html"]':   ['Contact', 'Contact'],
-    '.footer-col:nth-child(2) a[href="services.html"]:nth-child(1)': ['Data Analytics', 'Analytique de données'],
-    '.footer-newsletter-hint': ['Get data insights in your inbox.', 'Recevez des insights dans votre boîte mail.'],
-    '.footer-bottom-inner > p': ['© 2025 Sonadive Analytics. All Rights Reserved.', '© 2025 Sonadive Analytics. Tous droits réservés.'],
-    '.footer-bottom-links a:first-child': ['Privacy Policy', 'Politique de confidentialité'],
-    '.footer-bottom-links a:last-child':  ["Terms of Service", "Conditions d'utilisation"],
-    '.newsletter-row input[type="email"]': {ph:['Your email', 'Votre email']},
-  };
-
-  // ── Page-specific maps ──────────────────────────────────────────
-  const PAGE_MAPS = {
-
-    home: {
-      '.hero-badge':   {h:['EPM &amp; MODERN DATA ARCHITECTURE',
-                          "EPM &amp; ARCHITECTURE DE DONNÉES MODERNE"]},
-      '.hero h1':      {h:['EPM &amp; Data Pipelines.<br><span class="gold-text">Scale Faster.</span>',
-                          "EPM &amp; Pipelines de Données.<br><span class='gold-text'>Évoluez Plus Vite.</span>"]},
-      '.hero-sub':     ['We help Finance and Ops teams deploy Pigment, Anaplan, and cloud data backends without multi-month consultancy delays.',
-                        "Nous aidons les équipes Finance et Opérations à déployer Pigment, Anaplan et des backends de données cloud sans les délais de plusieurs mois des cabinets de conseil."],
-      '.hero-cta a.btn-primary':  ['Book a Consultation →', 'Réserver une consultation →'],
-      '.hero-cta a.btn-outline':  ['View Tech Ecosystem →', "Voir l'écosystème technique →"],
-      '.services .section-eyebrow': ['OUR SERVICES', 'NOS SERVICES'],
-      '.services h2':  ['End-to-End Data & EPM Solutions', 'Solutions Data & EPM Complètes'],
-      '.services .section-sub': ['From cloud architecture to rapid model deployment, we build scalable platforms for fast decisions.',
-        "De l'architecture cloud au déploiement rapide de modèles, nous construisons des plateformes scalables pour décider vite."],
-      '.service-card:nth-child(1) h3': ['EPM Deployment', 'Déploiement EPM'],
-      '.service-card:nth-child(1) p':  ['Rapid Pigment & Anaplan implementations for FP&A, ARR, and headcount modeling.', "Implémentations rapides Pigment & Anaplan pour le FP&A, l'ARR et la modélisation des effectifs."],
-      '.service-card:nth-child(2) h3': ['Data Engineering', 'Ingénierie des données'],
-      '.service-card:nth-child(2) p':  ['Automated pipelines connecting Snowflake, Databricks, and Azure to your planning tools.', 'Pipelines automatisés connectant Snowflake, Databricks et Azure à vos outils de planification.'],
-      '.service-card:nth-child(3) h3': ['Business Intelligence', "Intelligence d'affaires"],
-      '.service-card:nth-child(3) p':  ['Production-grade Power BI dashboards fed directly by enterprise data warehouses.', 'Tableaux de bord Power BI de production alimentés directement par vos entrepôts de données.'],
-      '.service-card:nth-child(4) h3': ['Anaplan to Pigment Migration', 'Migration Anaplan vers Pigment'],
-      '.service-card:nth-child(4) p':  ['Transition legacy models to modern Pigment architecture without data loss.', 'Migrez vos modèles legacy vers une architecture Pigment moderne sans perte de données.'],
-      '.service-card:nth-child(5) h3': ['Process Automation', 'Automatisation des processus'],
-      '.service-card:nth-child(5) p':  ['Streamlined data ingestion workflows and automated financial reconciliation.', "Flux d'ingestion de données simplifiés et rapprochements financiers automatisés."],
-      '.service-card:nth-child(6) h3': ['Fractional EPM Support', 'Support EPM à temps partagé'],
-      '.service-card:nth-child(6) p':  ['Dedicated monthly retainer support for workspace maintenance and model updates.', 'Support mensuel dédié pour la maintenance des workspaces et la mise à jour des modèles.'],
-      '.svc-link': ['Learn more →', 'En savoir plus →'],
-      '.tech-stack .section-eyebrow': ['OUR INTEGRATED TECH ECOSYSTEM', 'NOTRE ÉCOSYSTÈME TECHNIQUE INTÉGRÉ'],
-      '.why .section-eyebrow': ['WHY CHOOSE SONADIVE', 'POURQUOI CHOISIR SONADIVE'],
-      '.why h2': {h:['Why Partners &amp; Enterprises<br>Build with Us', 'Pourquoi Partenaires &amp; Entreprises<br>Construisent avec Nous']},
-      '.why-item:nth-child(1) h4': ['Certified Builders', 'Experts certifiés'],
-      '.why-item:nth-child(1) p':  ['Senior certified Pigment & Anaplan Solution Architects assigned directly to your project.', 'Des Solution Architects Pigment et Anaplan seniors certifiés affectés directement à votre projet.'],
-      '.why-item:nth-child(2) h4': ['High-Velocity Delivery', 'Livraison à haute vélocité'],
-      '.why-item:nth-child(2) p':  ['Agile 4 to 8 week deployments instead of bloated consultancy timelines.', 'Des déploiements agiles de 4 à 8 semaines au lieu des délais interminables des cabinets.'],
-      '.why-item:nth-child(3) h4': ['Full-Stack Integration', 'Intégration full-stack'],
-      '.why-item:nth-child(3) p':  ['We engineer both the backend data pipeline and the front-end EPM model.', 'Nous concevons à la fois le pipeline de données backend et le modèle EPM front-end.'],
-      '.why-item:nth-child(4) h4': ['Flexible Support Models', 'Modèles de support flexibles'],
-      '.why-item:nth-child(4) p':  ['From full build-outs to fractional admin support and white-label delivery.', "Du build complet au support admin à temps partagé et à la livraison en marque blanche."],
-      '.contact-form-wrap .section-eyebrow': ["LET'S CONNECT", 'TRAVAILLONS ENSEMBLE'],
-      '.contact-form-wrap h2': ['Get in Touch', 'Prendre Contact'],
-      '.contact-form-wrap .section-sub': ['Need a certified Pigment builder or data pipeline architect? Let’s talk.',
-        "Besoin d'un expert Pigment certifié ou d'un architecte de pipelines de données ? Parlons-en."],
-      '.contact-form input[name="name"]':    {ph:['Your Name', 'Votre Nom']},
-      '.contact-form input[name="email"]':   {ph:['Your Email', 'Votre Email']},
-      '.contact-form input[name="company"]': {ph:['Company Name', "Nom de l'Entreprise"]},
-      '.contact-form input[name="phone"]':   {ph:['Phone Number', 'Numéro de Téléphone']},
-      '.contact-form textarea':              {ph:['Your Message', 'Votre Message']},
-      '.contact-form .form-btn':             ['Send Message →', 'Envoyer le message →'],
-      '#formSuccess': ['Message sent! We\'ll be in touch soon.', 'Message envoyé ! Nous vous contacterons bientôt.'],
-      '#formError':   ['Something went wrong. Please try again or email us directly.', "Une erreur s'est produite. Veuillez réessayer ou nous envoyer un email directement."],
-    },
-
-    about: {
-      '.page-hero-eyebrow': ['Our Story', 'Notre Histoire'],
-      '.page-hero h1': {h:['We Dive Deeper<br><span class="gradient-text">So You Move Faster</span>',
-        'Nous Plongeons Plus Profond<br><span class="gradient-text">Pour Vous Faire Avancer Plus Vite</span>']},
-      '.page-hero p:not(.page-hero-eyebrow)': ['Sonadive was founded on a clear mission: to eliminate the slow, bloated implementation cycles of traditional consultancies. We dive deep into underlying data architecture and deploy high-velocity EPM models in Pigment and Anaplan.',
-        "Sonadive a été fondé avec une mission claire : éliminer les cycles de mise en œuvre lents et surdimensionnés des cabinets de conseil traditionnels. Nous plongeons au cœur de l'architecture de données et déployons des modèles EPM à haute vélocité dans Pigment et Anaplan."],
-      '.about-intro-text .section-eyebrow': ['WHO WE ARE', 'QUI NOUS SOMMES'],
-      '.about-intro-text h2': ['An Agile Delivery Partner for EPM & Cloud Data', 'Un Partenaire de Déploiement Agile pour l’EPM et le Cloud Data'],
-      '.about-intro-text > p:nth-of-type(2)': ['From mid-market finance teams to scaling enterprises, we combine modern cloud data pipelines (Snowflake, Databricks, Azure) with rapid Pigment and Anaplan model deployment.',
-        "Des équipes finance du mid-market aux entreprises en forte croissance, nous combinons des pipelines de données cloud modernes (Snowflake, Databricks, Azure) avec un déploiement rapide de modèles Pigment et Anaplan."],
-      '.about-highlight:nth-of-type(1)': ['Rapid 4–8 week Pigment and Anaplan implementation cycles', 'Cycles de mise en œuvre Pigment et Anaplan rapides en 4 à 8 semaines'],
-      '.about-highlight:nth-of-type(2)': ['End-to-end integration: From raw warehouse data to executive dashboards', 'Intégration de bout en bout : des données brutes du warehouse aux tableaux de bord de direction'],
-      '.about-highlight:nth-of-type(3)': ['Senior certified Pigment builders and cloud data engineers', 'Experts Pigment certifiés seniors et ingénieurs de données cloud'],
-      '.mission-text h3': ['Our Mission', 'Notre Mission'],
-      '.mission-text p': ['To democratise data analytics for businesses of all sizes — giving every organisation the tools, insights, and strategies they need to compete in a data-driven world. We believe analytics should be accessible, actionable, and impactful.',
-        "Démocratiser l'analytique de données pour les entreprises de toutes tailles — donner à chaque organisation les outils, les insights et les stratégies dont elle a besoin pour être compétitive dans un monde orienté données. Nous pensons que l'analytique doit être accessible, actionnable et impactante."],
-      '.mission-text .btn-primary': ['Work With Us →', 'Travaillez avec nous →'],
-      '.mission-quote': {h:['\"Deep Data.<br>Real Impact.\"', '\"Données profondes.<br>Impact réel.\"']},
-      '.section-header .section-eyebrow': ['OUR VALUES', 'NOS VALEURS'],
-      '.section-header h2': ['What Guides Everything We Do', 'Ce Qui Guide Tout Ce Que Nous Faisons'],
-      '.section-header p:not(.section-eyebrow)': ["Our values aren't posted on a wall — they're embedded in every analysis, recommendation, and client relationship.",
-        "Nos valeurs ne sont pas affichées sur un mur — elles sont intégrées dans chaque analyse, recommandation et relation client."],
-      '.value-card:nth-child(1) h4': ['Integrity First', "L'Intégrité Avant Tout"],
-      '.value-card:nth-child(1) p':  ["We give honest assessments, even when it's not what clients want to hear. Trust is the foundation of every engagement.",
-        "Nous donnons des évaluations honnêtes, même quand ce n'est pas ce que les clients veulent entendre. La confiance est le fondement de chaque engagement."],
-      '.value-card:nth-child(2) h4': ['Data Precision', 'Précision des Données'],
-      '.value-card:nth-child(2) p':  ['We obsess over accuracy. Every insight is validated, every model tested, every recommendation backed by evidence.',
-        "Nous sommes obsédés par l'exactitude. Chaque insight est validé, chaque modèle testé, chaque recommandation appuyée par des preuves."],
-      '.value-card:nth-child(3) h4': ['Client Partnership', 'Partenariat Client'],
-      '.value-card:nth-child(3) p':  ["We're not vendors — we're partners. We embed within your teams and care about your outcomes as much as you do.",
-        "Nous ne sommes pas des fournisseurs — nous sommes des partenaires. Nous nous intégrons dans vos équipes et nous soucions de vos résultats autant que vous."],
-      '.value-card:nth-child(4) h4': ['Measurable Impact', 'Impact Mesurable'],
-      '.value-card:nth-child(4) p':  ['We define success in numbers — revenue gained, costs reduced, decisions accelerated. Analytics must drive real outcomes.',
-        "Nous définissons le succès en chiffres — revenus générés, coûts réduits, décisions accélérées. L'analytique doit produire des résultats concrets."],
-      '.bg-dark .section-eyebrow': ['GET STARTED', 'COMMENÇONS'],
-      '.bg-dark h2': ['Ready to Transform Your Data?', 'Prêt à transformer vos données ?'],
-      '.bg-dark p:not(.section-eyebrow)': ["Let's talk about your data challenges and how Sonadive can help.", "Parlons de vos défis data et de comment Sonadive peut vous aider."],
-      '.bg-dark .btn-primary': ['Book a Free Consultation →', 'Réserver une consultation gratuite →'],
-      '.bg-dark .btn-outline': ['Explore Our Services', 'Explorer nos services'],
-    },
-
-    services: {
-      '.page-hero-eyebrow': ['What We Do', 'Ce Que Nous Faisons'],
-      '.page-hero h1': {h:['End-to-End<br><span class="gradient-text">Data &amp; EPM Solutions</span>',
-        'Solutions Data &amp; EPM<br><span class="gradient-text">de Bout en Bout</span>']},
-      '.page-hero p:not(.page-hero-eyebrow)': ['From financial model architecture to production-grade data pipelines and AI automation — we cover every layer of the modern data stack.',
-        "De l'architecture de modèles financiers aux pipelines de données de production et à l'automatisation par IA — nous couvrons chaque couche de la stack data moderne."],
-      '.page-section:first-of-type .section-eyebrow': ['OUR SERVICES', 'NOS SERVICES'],
-      '.page-section:first-of-type h2': ['Six Ways We Help You Scale With Data', 'Six Façons de Vous Aider à Évoluer avec les Données'],
-      '.page-section:first-of-type .section-header p:not(.section-eyebrow)': ['Built to align finance, operations, and engineering — delivering measurable business value, not just code.',
-        "Conçu pour aligner la finance, les opérations et l'ingénierie — en livrant une valeur commerciale mesurable, pas seulement du code."],
-      '.service-detail-card:nth-child(1) h3': ['EPM', 'EPM'],
-      '.service-detail-card:nth-child(2) h3': ['Data Analytics & Business Intelligence', "Analytique de données & Intelligence d'affaires"],
-      '.service-detail-card:nth-child(3) h3': ['Data Engineering & Infrastructure', 'Ingénierie des données & Infrastructure'],
-      '.service-detail-card:nth-child(4) h3': ['AI & Process Automation', 'IA & Automatisation des processus'],
-      '.service-detail-card:nth-child(5) h3': ['Data Strategy & Governance', 'Stratégie & Gouvernance des données'],
-      '.service-detail-card:nth-child(6) h3': ['Implementation & Managed Services', 'Implémentation & Services gérés'],
-      '.svc-link, .service-detail-card a.svc-link': ['Get started →', 'Commencer →'],
-      '.bg-dark .section-eyebrow': ['READY TO START', 'PRÊT À COMMENCER'],
-      '.bg-dark h2': ['Not Sure Which Solution Fits Your Architecture?', 'Vous ne savez pas quelle solution convient à votre architecture ?'],
-      '.bg-dark p:not(.section-eyebrow)': ['Let’s discuss your current setup, platform requirements, and data strategy on a brief discovery call.',
-        "Discutons de votre configuration actuelle, de vos besoins de plateforme et de votre stratégie data lors d'un bref appel de découverte."],
-      '.bg-dark .btn-primary': ['Book a Free Consultation →', 'Réserver une consultation gratuite →'],
-    },
-
-    industries: {
-      '.page-hero-eyebrow': ['Where We Operate', 'Où Nous Intervenons'],
-      '.page-hero h1': {h:['Deep Expertise Across<br><span class="gradient-text">Every Industry</span>',
-        'Expertise Approfondie dans<br><span class="gradient-text">Chaque Secteur</span>']},
-      '.page-hero p:not(.page-hero-eyebrow)': ["We don't just understand data — we understand your industry. Our consultants bring domain-specific knowledge to every engagement.",
-        "Nous ne comprenons pas seulement les données — nous comprenons votre secteur. Nos consultants apportent une connaissance spécifique à chaque engagement."],
-      '.section-header .section-eyebrow': ['INDUSTRIES WE SERVE', 'SECTEURS QUE NOUS SERVONS'],
-      '.section-header h2': ['Sector-Specific Data Solutions', 'Solutions Data par Secteur'],
-      '.section-header p:not(.section-eyebrow)': ['Each industry has unique data challenges. We bring the right expertise to solve them.',
-        "Chaque secteur a ses défis data uniques. Nous apportons l'expertise adéquate pour les résoudre."],
-      '.industry-card:nth-child(1) h3': ['Retail & E-Commerce', 'Commerce & E-Commerce'],
-      '.industry-card:nth-child(1) p':  ['Drive revenue growth through customer intelligence, demand forecasting, inventory optimisation, and personalised marketing analytics.',
-        "Stimulez la croissance du chiffre d'affaires grâce à l'intelligence client, la prévision de la demande, l'optimisation des stocks et l'analytique marketing personnalisée."],
-      '.industry-card:nth-child(2) h3': ['Financial Services', 'Services Financiers'],
-      '.industry-card:nth-child(2) p':  ['Improve risk models, accelerate compliance reporting, detect fraud in real time, and enhance client portfolio analytics with data-driven precision.',
-        "Améliorez les modèles de risque, accélérez le reporting réglementaire, détectez la fraude en temps réel et améliorez l'analytique des portefeuilles clients."],
-      '.industry-card:nth-child(3) h3': ['Healthcare', 'Santé'],
-      '.industry-card:nth-child(3) p':  ['Support clinical decisions, optimise resource allocation, improve patient outcomes, and enable population health analytics through integrated data platforms.',
-        "Soutenez les décisions cliniques, optimisez l'allocation des ressources, améliorez les résultats patients et activez l'analytique de santé populationnelle."],
-      '.industry-card:nth-child(4) h3': ['Manufacturing', 'Industrie & Production'],
-      '.industry-card:nth-child(4) p':  ['Reduce downtime, improve yield, and streamline supply chains with real-time operational analytics, predictive maintenance, and quality monitoring.',
-        "Réduisez les temps d'arrêt, améliorez les rendements et optimisez les chaînes d'approvisionnement grâce à l'analytique opérationnelle en temps réel."],
-      '.industry-card:nth-child(5) h3': ['Technology & SaaS', 'Technologie & SaaS'],
-      '.industry-card:nth-child(5) p':  ['Turn product usage data into growth intelligence — optimise funnels, reduce churn, understand user behaviour, and build a data-informed product roadmap.',
-        "Transformez les données d'utilisation en intelligence de croissance — optimisez les tunnels, réduisez le churn et construisez une feuille de route produit basée sur les données."],
-      '.industry-card:nth-child(6) h3': ['Real Estate & Property', 'Immobilier & Patrimoine'],
-      '.industry-card:nth-child(6) p':  ['Value properties accurately, identify investment opportunities, analyse market trends, and optimise portfolio performance with location-based intelligence.',
-        "Évaluez les biens avec précision, identifiez les opportunités d'investissement et optimisez la performance de portefeuille grâce à l'intelligence géolocalisée."],
-      '.bg-dark .section-eyebrow': ['YOUR INDUSTRY', 'VOTRE SECTEUR'],
-      '.bg-dark h2': ["Don't See Your Industry?", "Votre secteur n'est pas listé ?"],
-      '.bg-dark p:not(.section-eyebrow)': ["We work across many sectors. Let's discuss how our approach applies to your specific context.",
-        "Nous intervenons dans de nombreux secteurs. Discutons de la façon dont notre approche s'applique à votre contexte spécifique."],
-      '.bg-dark .btn-primary': ['Start a Conversation →', 'Démarrer une conversation →'],
-    },
-
-    casestudies: {
-      '.page-hero-eyebrow': ['Real Results', 'Résultats Réels'],
-      '.page-hero h1': {h:['Real Challenges.<br><span class="gradient-text">Real Results.</span>',
-        'Vrais Défis.<br><span class="gradient-text">Vrais Résultats.</span>']},
-      '.page-hero p:not(.page-hero-eyebrow)': ['Explore how Sonadive has delivered measurable impact across industries through data-driven solutions.',
-        "Découvrez comment Sonadive a livré un impact mesurable dans différents secteurs grâce à des solutions orientées données."],
-      '.section-eyebrow': ['CASE STUDIES', 'ÉTUDES DE CAS'],
-      'section h2': ['Client Success Stories', 'Histoires de Succès Client'],
-    },
-
-    insights: {
-      '.page-hero-eyebrow': ['Knowledge Hub', 'Centre de Connaissances'],
-      '.page-hero h1': {h:['Data Analytics<br><span class="gradient-text">Insights & Resources</span>',
-        'Analytique de Données<br><span class="gradient-text">Perspectives & Ressources</span>']},
-      '.page-hero p:not(.page-hero-eyebrow)': ['Practical perspectives on data strategy, analytics, AI, and the future of business intelligence — from our team to yours.',
-        "Perspectives pratiques sur la stratégie data, l'analytique, l'IA et l'avenir de l'intelligence d'affaires — de notre équipe à la vôtre."],
-      '.section-eyebrow:nth-of-type(1)': ['Featured Article', 'Article Vedette'],
-      'section .section-header .section-eyebrow': ['LATEST ARTICLES', 'DERNIERS ARTICLES'],
-      '.section-header h2': ['From Our Team', 'De Notre Équipe'],
-      '.section-header p:not(.section-eyebrow)': ['Practical insights and expert perspectives on data, analytics, and AI.',
-        "Insights pratiques et perspectives d'experts sur les données, l'analytique et l'IA."],
-      '.insight-read': ['Read more →', 'Lire la suite →'],
-    },
-
-    contact: {
-      '.page-hero-eyebrow': ['Get in Touch', 'Entrez en Contact'],
-      '.page-hero h1': {h:["Let's Start a<br><span class=\"gradient-text\">Conversation</span>",
-        "Démarrons une<br><span class=\"gradient-text\">Conversation</span>"]},
-      '.page-hero p:not(.page-hero-eyebrow)': ["Have a data challenge or project in mind? Tell us about it — we'll get back to you within 24 hours with honest, practical advice.",
-        "Vous avez un défi data ou un projet en tête ? Partagez-le avec nous — nous vous répondrons dans les 24 heures avec des conseils honnêtes et pratiques."],
-      '.contact-info-panel': ['How to Reach Us', 'Comment Nous Joindre'],
-      '.contact-info-item:nth-child(2) h4': ['Email', 'Email'],
-      '.contact-info-item:nth-child(2) p:last-child': ['We reply within 24 hours', 'Nous répondons dans les 24 heures'],
-      '.contact-info-item:nth-child(3) h4': ['Discovery Call', 'Appel de Découverte'],
-      '.contact-info-item:nth-child(3) p:first-of-type': ['Book a free 30-minute call', 'Réservez un appel gratuit de 30 minutes'],
-      '.contact-info-item:nth-child(3) p:last-child': ['No commitment required', 'Aucun engagement requis'],
-      '.contact-info-item:nth-child(4) h4': ['Response Time', 'Délai de Réponse'],
-      '.contact-info-item:nth-child(4) p': ['Within 24 hours on business days', 'Dans les 24 heures les jours ouvrés'],
-      '.contact-info-item:nth-child(5) h4': ['LinkedIn', 'LinkedIn'],
-      '.contact-info-item:nth-child(5) p a': ['Connect with Sonadive', 'Connectez-vous avec Sonadive'],
-      '.contact-form-card h3': ['Send Us a Message', 'Envoyez-nous un Message'],
-      '.contact-form-card > p': ["Tell us about your project and we'll get back to you quickly.", 'Parlez-nous de votre projet et nous vous répondrons rapidement.'],
-      '#contactForm input[name="name"]':    {ph:['Your Name', 'Votre Nom']},
-      '#contactForm input[name="email"]':   {ph:['Your Email', 'Votre Email']},
-      '#contactForm input[name="company"]': {ph:['Company Name', "Nom de l'Entreprise"]},
-      '#contactForm input[name="phone"]':   {ph:['Phone Number', 'Numéro de Téléphone']},
-      '#contactForm select': {ph:['What service are you interested in?', 'Quel service vous intéresse ?']},
-      '#contactForm textarea': {ph:['Tell us about your data challenge or project...', 'Parlez-nous de votre défi data ou de votre projet...']},
-      '#contactForm button[type="submit"]': ['Send Message →', 'Envoyer le message →'],
-      '#formSuccess': ["Message sent! We'll be in touch within 24 hours.", 'Message envoyé ! Nous vous contacterons dans les 24 heures.'],
-      '#formError': ['Something went wrong. Please try again or email us directly at ngabochampion@gmail.com',
-        "Une erreur s'est produite. Veuillez réessayer ou nous envoyer un email directement à ngabochampion@gmail.com"],
-    },
-  };
-
-  // ── Apply translations ──────────────────────────────────────────
-  const i = lang === 'fr' ? 1 : 0;
-
-  function applyMap(map) {
-    Object.entries(map).forEach(([sel, val]) => {
-      document.querySelectorAll(sel).forEach(el => {
-        if (Array.isArray(val)) {
-          el.textContent = val[i];
-        } else if (val.h) {
-          el.innerHTML = val.h[i];
-        } else if (val.ph) {
-          el.placeholder = val.ph[i];
-        }
-      });
-    });
-  }
+  let lang = 'en';
+  try { lang = localStorage.getItem(KEY) || 'en'; } catch (e) {}
+  const en = new WeakMap();
 
   function apply() {
-    const idx = lang === 'fr' ? 1 : 0;
-    // Reassign i (closure won't see updated lang)
-    Object.entries(MAP).forEach(([sel, val]) => {
-      document.querySelectorAll(sel).forEach(el => {
-        if (Array.isArray(val)) el.textContent = val[idx];
-        else if (val.h) el.innerHTML = val.h[idx];
-        else if (val.ph) el.placeholder = val.ph[idx];
-      });
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (!en.has(el)) en.set(el, el.innerHTML);
+      const fr = FR[el.dataset.i18n];
+      el.innerHTML = lang === 'fr' && fr ? fr : en.get(el);
     });
-    const pm = PAGE_MAPS[page];
-    if (pm) {
-      Object.entries(pm).forEach(([sel, val]) => {
-        document.querySelectorAll(sel).forEach(el => {
-          if (Array.isArray(val)) el.textContent = val[idx];
-          else if (val.h) el.innerHTML = val.h[idx];
-          else if (val.ph) el.placeholder = val.ph[idx];
-        });
-      });
-    }
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      if (!en.has(el)) en.set(el, el.placeholder);
+      const fr = FR[el.dataset.i18nPh];
+      el.placeholder = lang === 'fr' && fr ? fr : en.get(el);
+    });
     document.documentElement.lang = lang;
-    // Legacy single-button toggle (mobile menu)
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.textContent = lang === 'en' ? 'FR' : 'EN';
-    });
-    // EN | FR switch in the navbar
     document.querySelectorAll('.lang-opt').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+      const on = btn.dataset.lang === lang;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-pressed', String(on));
     });
   }
 
-  function setLang(next) {
-    if (next === lang) return;
-    lang = next;
-    localStorage.setItem(KEY, lang);
+  document.querySelectorAll('.lang-opt').forEach(btn => btn.addEventListener('click', () => {
+    if (btn.dataset.lang === lang) return;
+    lang = btn.dataset.lang;
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
     apply();
-  }
-
-  function toggle() {
-    setLang(lang === 'en' ? 'fr' : 'en');
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.addEventListener('click', toggle);
-    });
-    document.querySelectorAll('.lang-opt').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.lang));
-    });
-    apply();
-  });
-
+    document.dispatchEvent(new Event('sd:lang'));
+  }));
+  apply();
 })();
