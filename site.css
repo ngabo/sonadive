@@ -152,25 +152,22 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .stage.video-ready .ring { opacity: 0; }
 .chev { position: absolute; left: 50%; bottom: 26px; width: 22px; color: var(--accent); margin-left: -11px; animation: chev 2.6s var(--ease-soft) -1s infinite; }
 @keyframes chev { 50% { transform: translateY(7px); opacity: .55 } }
-.band { position: absolute; inset: 0; display: flex; align-items: center; padding: 88px var(--gutter) 40px; opacity: 0; pointer-events: none; text-shadow: var(--tshadow); }
-.band::before { content: ''; position: absolute; left: -6%; top: 0; bottom: 0; width: 76%; pointer-events: none; opacity: calc(.25 + .75 * var(--k, 1)); background: radial-gradient(ellipse 82% 74% at 32% 52%, rgba(6, 15, 26, var(--sa, .7)) 0%, rgba(6, 15, 26, calc(var(--sa, .7) * .94)) 50%, rgba(6, 15, 26, calc(var(--sa, .7) * .5)) 72%, rgba(6, 15, 26, 0) 96%); }
+.band { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 88px var(--gutter) 40px; opacity: 0; pointer-events: none; text-shadow: var(--tshadow); }
+.band::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: calc(.25 + .75 * var(--k, 1)); background: radial-gradient(ellipse 66% 60% at 50% 50%, rgba(6, 15, 26, var(--sa, .78)) 0%, rgba(6, 15, 26, calc(var(--sa, .78) * .9)) 52%, rgba(6, 15, 26, calc(var(--sa, .78) * .38)) 76%, rgba(6, 15, 26, 0) 100%); }
 .band.on { pointer-events: auto; }
-.band-in { position: relative; width: min(47vw, 700px); margin-inline: max(0px, calc((100vw - var(--wrap)) / 2)); }
+.band-in { position: relative; width: min(92vw, 1260px); margin-inline: auto; }
 .band h2, .band .big { font-family: var(--f-display); font-weight: 400; font-size: clamp(50px, 7.4vw, 112px); line-height: .98; letter-spacing: -.035em; }
 .band .btn { text-shadow: none; }
 .band .label { margin-bottom: 26px; }
-.band .sub { font-size: clamp(21px, 2.3vw, 33px); line-height: 1.32; font-family: var(--f-display); letter-spacing: -.012em; }
+.band .sub { max-width: 860px; margin-inline: auto; font-size: clamp(21px, 2.3vw, 33px); line-height: 1.32; font-family: var(--f-display); letter-spacing: -.012em; }
 .w { display: inline-block; will-change: transform; }
-.ent-settle { justify-content: center; text-align: center; }
-.ent-settle::before { left: 0; width: 100%; background: radial-gradient(ellipse 66% 60% at 50% 50%, rgba(6, 15, 26, .78) 0%, rgba(6, 15, 26, .7) 52%, rgba(6, 15, 26, .3) 76%, rgba(6, 15, 26, 0) 100%); }
-.ent-settle .band-in { width: min(92vw, 1260px); margin-inline: auto; }
 .ent-settle .big { font-size: clamp(42px, 6.2vw, 96px); }
 .ent-settle .cta-row { justify-content: center; }
 
 /* Entrances: transform and opacity only, scrubbed off --k, reversible */
-.ent-depth .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 2.8, 1); opacity: var(--kc); transform: scale(calc(.8 + .2 * var(--kc))); transform-origin: 0 60%; }
-.ent-punch .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 3, 1); --ks: clamp(0, (var(--k, 0) - var(--th, 0) - .16) * 2.6, 1); opacity: var(--kc); transform: scale(calc(.6 + .54 * var(--kc) - .14 * var(--ks))); transform-origin: 0 70%; }
-.ent-seam .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 3.4, 1); opacity: var(--kc); transform: translateX(calc((1 - var(--kc)) * -14px)); }
+.ent-depth .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 2.8, 1); opacity: var(--kc); transform: scale(calc(.8 + .2 * var(--kc))); transform-origin: 50% 60%; }
+.ent-punch .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 3, 1); --ks: clamp(0, (var(--k, 0) - var(--th, 0) - .16) * 2.6, 1); opacity: var(--kc); transform: scale(calc(.6 + .54 * var(--kc) - .14 * var(--ks))); transform-origin: 50% 70%; }
+.ent-seam .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 3.4, 1); opacity: var(--kc); transform: translateY(calc((1 - var(--kc)) * 12px)); }
 .ent-settle .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 3, 1); opacity: var(--kc); transform: translateY(calc((1 - var(--kc)) * 26px)); }
 .ent-settle .cta-row { --kb: clamp(0, (var(--k, 0) - .62) * 3.4, 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 16px)); }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
