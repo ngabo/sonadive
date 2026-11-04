@@ -165,7 +165,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .ent-punch .big { font-size: clamp(44px, 6.4vw, 98px); }
 /* First title starts high, near the top third, with its dark veil following it */
 .ent-depth { align-items: flex-start; padding-top: max(88px, 28vh); padding-top: max(88px, 28svh); --cy: 44%; }
-.ent-depth .big { font-size: clamp(44px, 6.4vw, 98px); text-wrap: balance; }
+.ent-depth .big { font-size: clamp(36px, 4.2vw, 68px); line-height: 1.08; letter-spacing: -.025em; max-width: 14em; margin-inline: auto; text-wrap: balance; }
 .ent-depth .cta-row { --kb: clamp(0, (var(--k, 0) - .62) * 3.4, 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 16px)); }
 .band .cta-row { justify-content: center; }
 
