@@ -153,7 +153,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .chev { position: absolute; left: 50%; bottom: 26px; width: 22px; color: var(--accent); margin-left: -11px; animation: chev 2.6s var(--ease-soft) -1s infinite; }
 @keyframes chev { 50% { transform: translateY(7px); opacity: .55 } }
 .band { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 88px var(--gutter) 40px; opacity: 0; pointer-events: none; text-shadow: var(--tshadow); }
-.band::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: calc(.25 + .75 * var(--k, 1)); background: radial-gradient(ellipse 66% 60% at 50% 50%, rgba(6, 15, 26, var(--sa, .78)) 0%, rgba(6, 15, 26, calc(var(--sa, .78) * .9)) 52%, rgba(6, 15, 26, calc(var(--sa, .78) * .38)) 76%, rgba(6, 15, 26, 0) 100%); }
+.band::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: calc(.25 + .75 * var(--k, 1)); background: radial-gradient(ellipse 66% 60% at 50% var(--cy, 50%), rgba(6, 15, 26, var(--sa, .78)) 0%, rgba(6, 15, 26, calc(var(--sa, .78) * .9)) 52%, rgba(6, 15, 26, calc(var(--sa, .78) * .38)) 76%, rgba(6, 15, 26, 0) 100%); }
 .band.on { pointer-events: auto; }
 .band-in { position: relative; width: min(92vw, 1260px); margin-inline: auto; }
 .band h2, .band .big { font-family: var(--f-display); font-weight: 400; font-size: clamp(50px, 7.4vw, 112px); line-height: .98; letter-spacing: -.035em; }
@@ -162,6 +162,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .band .sub { max-width: 860px; margin-inline: auto; font-size: clamp(21px, 2.3vw, 33px); line-height: 1.32; font-family: var(--f-display); letter-spacing: -.012em; }
 .w { display: inline-block; will-change: transform; }
 .ent-settle .big { font-size: clamp(42px, 6.2vw, 96px); }
+.ent-punch .big { font-size: clamp(44px, 6.4vw, 98px); }
+/* First title starts high, near the top third, with its dark veil following it */
+.ent-depth { align-items: flex-start; padding-top: max(88px, 28vh); padding-top: max(88px, 28svh); --cy: 38%; }
 .ent-settle .cta-row { justify-content: center; }
 
 /* Entrances: transform and opacity only, scrubbed off --k, reversible */

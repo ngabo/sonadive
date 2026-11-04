@@ -36,6 +36,7 @@
   "nav.con": "Contact",
   "hero.l1": "EPM et pipelines de données.",
   "hero.l2": "Changez d’échelle, plus vite.",
+  "hero.l3": "Allez plus en profondeur.",
   "hero.eye": "EPM et architecture data moderne",
   "hero.sub": "Nous aidons les directions financières et opérationnelles à déployer Pigment, Anaplan et leurs socles de données cloud, sans les longs mois d’attente d’un cabinet traditionnel.",
   "hero.c1": "Prendre rendez-vous →",
