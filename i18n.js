@@ -33,8 +33,6 @@
   "nav.m.ai": "IA et automatisation",
   "nav.m.gov": "Stratégie et gouvernance des données",
   "nav.ind": "Secteurs",
-  "nav.cases": "Études de cas",
-  "nav.ins": "Perspectives",
   "nav.con": "Contact",
   "hero.l1": "EPM et pipelines de données.",
   "hero.l2": "Changez d’échelle, plus vite.",
@@ -214,98 +212,6 @@
   "i.cta.h": "Votre secteur n’apparaît pas ici ?",
   "i.cta.p": "Nous intervenons dans de nombreux secteurs. Voyons ensemble comment notre approche s’applique à votre contexte.",
   "i.cta.b": "Engager la conversation →",
-  "c.0.r0": "de hausse des ventes globales, deux trimestres après la mise en œuvre",
-  "c.0.r1": "d’amélioration du taux de conversion des campagnes e-mail",
-  "c.0.r2": "de retour sur l’investissement analytique en 6 mois",
-  "c.0.t": "Distribution",
-  "c.0.h": "Accélérer les ventes grâce à la connaissance client",
-  "c.0.p": "Une enseigne régionale voyait ses achats répétés reculer sans pouvoir identifier les segments de clientèle les plus rentables. Nous avons construit un modèle de segmentation avancé combinant fréquence d’achat, taille du panier et étape du cycle de vie.",
-  "c.0.s": "Services mobilisés : analyse de données, Business Intelligence, segmentation client",
-  "c.1.r0": "de baisse des défauts de paiement sur le portefeuille de crédits à la consommation",
-  "c.1.r1": "de gain de précision par rapport à l’ancien système de scoring",
-  "c.1.t": "Services financiers",
-  "c.1.h": "Fiabiliser l’évaluation du risque de crédit",
-  "c.1.p": "Un établissement de crédit faisait face à une hausse des défauts de paiement et à un modèle de scoring dépassé, fondé sur peu de variables. Nous avons refondu son cadre d’évaluation du risque grâce au machine learning, en intégrant plus de 80 variables comportementales et transactionnelles.",
-  "c.1.s": "Services mobilisés : IA et automatisation, analyse financière, ingénierie des données",
-  "c.2.r0": "d’amélioration du taux de rendement synthétique (TRS)",
-  "c.2.r1": "d’arrêts imprévus en moins",
-  "c.2.r2": "de baisse des coûts de maintenance sur un an",
-  "c.2.t": "Industrie",
-  "c.2.h": "Optimiser les opérations grâce aux données en temps réel",
-  "c.2.p": "Un industriel de taille intermédiaire perdait de nombreuses heures de production à cause d’arrêts imprévus. Nous avons déployé une plateforme d’analyse opérationnelle en temps réel et un modèle de maintenance prédictive sur ses principales lignes de production.",
-  "c.2.s": "Services mobilisés : ingénierie des données, IA et automatisation, Business Intelligence",
-  "c.3.r0": "de baisse du taux d’attrition mensuel en 90 jours",
-  "c.3.r1": "de précision du modèle pour repérer les comptes à risque 30 jours à l’avance",
-  "c.3.t": "Technologie / SaaS",
-  "c.3.h": "Réduire l’attrition grâce à l’analyse prédictive",
-  "c.3.p": "Un éditeur SaaS B2B perdait chaque mois 8 % de ses clients, sans aucun système d’alerte. Nous avons construit un modèle de prédiction de l’attrition (churn) à partir des signaux d’usage du produit, des tickets de support et des indicateurs d’engagement, puis l’avons intégré à son CRM.",
-  "c.3.s": "Services mobilisés : IA et automatisation, analyse produit, ingénierie des données",
-  "c.4.r0": "de réduction du temps d’attente moyen aux urgences",
-  "c.4.r1": "d’amélioration du taux d’occupation des lits dans les services",
-  "c.4.t": "Santé",
-  "c.4.h": "Fluidifier le parcours patient et mieux allouer les ressources",
-  "c.4.p": "Un réseau hospitalier régional faisait face à de longues attentes et à une allocation peu efficace de ses ressources. Nous avons analysé les admissions, les plannings des équipes et l’occupation des lits pour construire un modèle de planification des capacités et de prévision de la demande.",
-  "c.4.s": "Services mobilisés : analyse de données, modélisation prédictive, Business Intelligence",
-  "c.5.r0": "plus rapide que le processus manuel pour évaluer un dossier",
-  "c.5.r1": "de rendement moyen en plus sur les acquisitions dès la première année",
-  "c.5.t": "Immobilier",
-  "c.5.h": "Une stratégie d’investissement immobilier guidée par la donnée",
-  "c.5.p": "Une société d’investissement immobilier ne disposait d’aucune méthode systématique pour évaluer ses acquisitions. Nous avons construit une plateforme d’intelligence de marché qui agrège prix, rendements locatifs, données démographiques et d’urbanisme pour noter automatiquement les opportunités.",
-  "c.5.s": "Services mobilisés : stratégie data, analyse de marché, développement de tableaux de bord",
-  "c.c": "Études de cas",
-  "c.e": "Des résultats avérés",
-  "c.ti": "De vrais défis.<br><span class=\"tone\">De vrais résultats.</span>",
-  "c.su": "Découvrez comment nous avons aidé des organisations de tous secteurs à révéler la valeur de leurs données et à obtenir des résultats mesurables.",
-  "c.l": "Résultats clients",
-  "c.h": "Du défi à l’impact",
-  "c.p": "Chaque mission commence par un problème. Voici comment nous les avons résolus.",
-  "c.cta.l": "Votre histoire",
-  "c.cta.h": "Quelle sera votre prochaine réussite ?",
-  "c.cta.p": "Parlons de vos enjeux data et des résultats que nous pouvons atteindre ensemble.",
-  "c.cta.b": "Réserver un échange gratuit →",
-  "n.more": "Lire la suite →",
-  "n.0.c": "Analyse de données",
-  "n.0.d": "Mai 2026",
-  "n.0.h": "Les 5 KPI à suivre dans la distribution en 2026",
-  "n.0.p": "Au-delà du chiffre d’affaires et de la fréquentation, les indicateurs clients et opérationnels qui annoncent réellement la performance.",
-  "n.1.c": "IA et automatisation",
-  "n.1.d": "Mai 2026",
-  "n.1.h": "Comment bâtir le business case de l’IA dans votre organisation",
-  "n.1.p": "Une méthode concrète pour évaluer, prioriser et défendre vos projets d’IA auprès de décideurs attentifs au retour sur investissement.",
-  "n.2.c": "Gouvernance des données",
-  "n.2.d": "Avril 2026",
-  "n.2.h": "Gouverner ses données sans bureaucratie : le guide pratique",
-  "n.2.p": "Comment mettre en place une gouvernance réellement adoptée, sans ralentir vos équipes d’analyse.",
-  "n.3.c": "Business Intelligence",
-  "n.3.d": "Avril 2026",
-  "n.3.h": "Pourquoi vos tableaux de bord restent inutilisés, et comment y remédier",
-  "n.3.p": "La plupart des projets BI échouent moins à cause des données que de leur conception. Voici comment créer des tableaux de bord qui déclenchent l’action.",
-  "n.4.c": "Analyse financière",
-  "n.4.d": "Mars 2026",
-  "n.4.h": "Des tableurs aux plateformes FP&amp;A : franchir le pas",
-  "n.4.p": "Quand Excel ne suffit plus : comment évaluer, choisir et déployer une plateforme moderne de planification financière.",
-  "n.5.c": "Ingénierie des données",
-  "n.5.d": "Mars 2026",
-  "n.5.h": "Snowflake, BigQuery ou Redshift : quel entrepôt choisir en 2026 ?",
-  "n.5.p": "Une comparaison impartiale des trois principaux entrepôts de données cloud : coût, performance et adéquation à votre écosystème.",
-  "n.c": "Perspectives",
-  "n.e": "Centre de ressources",
-  "n.t": "Analyse de données :<br><span class=\"tone\">perspectives et ressources</span>",
-  "n.s": "Des points de vue concrets sur la stratégie data, l’analyse de données, l’IA et l’avenir de la Business Intelligence, partagés par notre équipe.",
-  "n.f.l": "À la une",
-  "n.f.h": "La stack data moderne en 2026 : l’essentiel pour les dirigeants",
-  "n.f.p": "Entrepôts cloud, architectures lakehouse et outils nativement IA ont profondément changé la façon de bâtir des capacités d’analyse. Voici notre guide pratique pour vous repérer.",
-  "n.f.d": "Juin 2026",
-  "n.f.r": "8 min de lecture",
-  "n.f.b": "Lire l’article →",
-  "n.l": "Derniers articles",
-  "n.h": "Les analyses de notre équipe",
-  "n.p": "Des analyses concrètes et des points de vue d’experts sur la donnée, l’analytique et l’IA.",
-  "n.nl.l": "Restez informé",
-  "n.nl.h": "Recevez nos analyses dans votre boîte mail",
-  "n.nl.p": "Chaque mois, nos points de vue sur l’analyse de données, les tendances de l’IA et des stratégies concrètes. Sans spam, désinscription à tout moment.",
-  "n.nl.ph": "Votre adresse e-mail",
-  "n.nl.b": "S’abonner →",
   "k.o0": "EPM",
   "k.o1": "Analyse de données",
   "k.o2": "Business Intelligence",
@@ -345,8 +251,6 @@
     about: ['À propos | Sonadive, conseil en analyse de données', 'Découvrez la mission, les valeurs et l’équipe de Sonadive, cabinet de conseil en analyse de données et EPM.'],
     services: ['Services | Sonadive, solutions data et EPM de bout en bout', 'EPM, analyse de données, Business Intelligence, ingénierie des données, IA et automatisation, stratégie data : découvrez les services de Sonadive.'],
     industries: ['Secteurs | Sonadive, la donnée au service de chaque secteur', 'Sonadive accompagne la distribution, les services financiers, la santé, l’industrie et la technologie avec des solutions data adaptées à leurs enjeux.'],
-    'case-studies': ['Études de cas | Sonadive, de vrais défis, de vrais résultats', 'Découvrez les résultats mesurables obtenus par Sonadive grâce à l’analyse de données : distribution, finance, santé et industrie.'],
-    insights: ['Perspectives | Sonadive, points de vue sur la donnée', 'Articles et guides de l’équipe Sonadive sur la Business Intelligence, l’IA, la stratégie data et les tendances du secteur.'],
     contact: ['Contact | Sonadive, réservez un échange gratuit', 'Contactez Sonadive pour réserver un échange gratuit sur vos enjeux data. Nous vous répondons sous 24 heures.']
   };
 
@@ -355,13 +259,11 @@
     'Company Name': 'Nom de votre entreprise', 'Language': 'Langue', 'Legal': 'Mentions légales', 'Main': 'Navigation principale',
     'Mobile': 'Navigation mobile', 'Newsletter email': 'E-mail pour la newsletter', 'Open menu': 'Ouvrir le menu', 'Phone Number': 'Numéro de téléphone',
     'Press and hold to open the vault': 'Maintenez appuyé pour ouvrir le coffre', 'Subscribe': 'S’abonner', 'What service are you interested in?': 'Quel service vous intéresse ?',
-    'Your Email': 'Votre e-mail', 'Your Message': 'Votre message', 'Your Name': 'Votre nom', 'Your email address': 'Votre adresse e-mail', 'Your message': 'Votre message'
+    'Your Email': 'Votre e-mail', 'Your Message': 'Votre message', 'Your Name': 'Votre nom', 'Your message': 'Votre message'
   };
 
   // French typography: no-break space before : ; ? ! % » and after «
   const typo = s => s.replace(/ ([:;?!%»])/g, ' $1').replace(/« /g, '« ');
-  // Figures: 18% -> 18 %, 2.4× -> 2,4×
-  const figure = s => s.replace('%', ' %').replace('.', ',');
 
   let lang = 'en';
   try { lang = localStorage.getItem(KEY) || 'en'; } catch (e) {}
@@ -382,10 +284,6 @@
       if (!en.has(el)) en.set(el, el.placeholder);
       const text = FR[el.dataset.i18nPh];
       el.placeholder = fr && text ? typo(text) : en.get(el);
-    });
-    document.querySelectorAll('.result strong').forEach(el => {
-      if (!en.has(el)) en.set(el, el.textContent);
-      el.textContent = fr ? figure(en.get(el)) : en.get(el);
     });
     document.querySelectorAll('[aria-label]').forEach(el => {
       if (!el.dataset.ariaEn) el.dataset.ariaEn = el.getAttribute('aria-label');
