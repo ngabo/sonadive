@@ -149,7 +149,7 @@
         });
       });
       const seq = el.dataset.seq === 'order';
-      words.forEach((w, j) => w.style.setProperty('--th', (seq ? (j / Math.max(1, words.length)) * 0.62 : (j * 0.09 + rand() * 0.05)).toFixed(3)));
+      words.forEach((w, j) => w.style.setProperty('--th', (seq ? (j / Math.max(1, words.length)) * 0.62 : Math.min(0.6, j * 0.09 + rand() * 0.05)).toFixed(3)));
     }
 
     const bands = $$('.band', stage).map((el, i) => ({

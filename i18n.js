@@ -34,6 +34,8 @@
   "nav.m.gov": "Stratégie et gouvernance des données",
   "nav.ind": "Secteurs",
   "nav.con": "Contact",
+  "hero.t": "Révéler le potentiel de votre entreprise par la donnée",
+  "hero.c3": "Découvrir notre expertise →",
   "hero.l1": "EPM et pipelines de données.",
   "hero.l2": "Changez d’échelle, plus vite.",
   "hero.l3": "Allez plus en profondeur.",

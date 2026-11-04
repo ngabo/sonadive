@@ -164,8 +164,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .ent-settle .big { font-size: clamp(42px, 6.2vw, 96px); }
 .ent-punch .big { font-size: clamp(44px, 6.4vw, 98px); }
 /* First title starts high, near the top third, with its dark veil following it */
-.ent-depth { align-items: flex-start; padding-top: max(88px, 28vh); padding-top: max(88px, 28svh); --cy: 38%; }
-.ent-settle .cta-row { justify-content: center; }
+.ent-depth { align-items: flex-start; padding-top: max(88px, 28vh); padding-top: max(88px, 28svh); --cy: 44%; }
+.ent-depth .big { font-size: clamp(44px, 6.4vw, 98px); text-wrap: balance; }
+.ent-depth .cta-row { --kb: clamp(0, (var(--k, 0) - .62) * 3.4, 1); opacity: var(--kb); transform: translateY(calc((1 - var(--kb)) * 16px)); }
+.band .cta-row { justify-content: center; }
 
 /* Entrances: transform and opacity only, scrubbed off --k, reversible */
 .ent-depth .w { --kc: clamp(0, (var(--k, 0) - var(--th, 0)) * 2.8, 1); opacity: var(--kc); transform: scale(calc(.8 + .2 * var(--kc))); transform-origin: 50% 60%; }
