@@ -162,7 +162,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .band .sub { max-width: 860px; margin-inline: auto; font-size: clamp(21px, 2.3vw, 33px); line-height: 1.32; font-family: var(--f-display); letter-spacing: -.012em; }
 .w { display: inline-block; will-change: transform; }
 .ent-settle .big { font-size: clamp(36px, 4.2vw, 68px); line-height: 1.08; letter-spacing: -.025em; }
-.ent-punch .big { font-size: clamp(44px, 6.4vw, 98px); }
+.ent-punch .big { font-size: clamp(36px, 4.2vw, 68px); line-height: 1.08; letter-spacing: -.025em; }
 /* First title starts high, near the top third, with its dark veil following it */
 .ent-depth { align-items: flex-start; padding-top: max(88px, 28vh); padding-top: max(88px, 28svh); --cy: 44%; }
 .ent-depth .big { font-size: clamp(36px, 4.2vw, 68px); line-height: 1.08; letter-spacing: -.025em; max-width: 14em; margin-inline: auto; text-wrap: balance; }
